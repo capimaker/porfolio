@@ -1,0 +1,128 @@
+{
+  "nav_home": "Home",
+  "nav_services": "Services",
+  "nav_resume": "Resume",
+  "nav_portfolio": "Portfolio",
+  "nav_contact": "Contact",
+
+  "hero_subtitle": "Full Stack Developer and Filmmaker",
+  "hero_title": "Hi, I'm Carlos",
+  "hero_desc": "My name is Carlos Ramos, but my friends call me Capi. I started programming with an IBM in school when I was 8 years old. Currently, I'm a trained Full Stack MERN developer.",
+  "btn_projects": "View Projects",
+  "btn_cv": "Download CV",
+
+  "services_title": "What I Do",
+  "services_items": [
+    {
+      "title": "Frontend Development",
+      "desc": "I build modern and responsive interfaces with React, CSS and smooth animations."
+    },
+    {
+      "title": "UI/UX Design",
+      "desc": "I design clean and engaging user experiences, optimized for real users."
+    },
+    {
+      "title": "Backend & APIs",
+      "desc": "I develop secure REST APIs with Node.js, Express and SQL/NoSQL databases."
+    }
+  ],
+
+  "resume_title": "My Journey",
+  "resume_tab_bio": "Experience",
+  "resume_tab_skills": "Skills",
+  "resume_tab_edu": "Education",
+
+  "resume_experience_title": "Work Experience",
+  "resume_skills_title": "Technical Skills",
+  "resume_education_title": "Education",
+
+  "resume_experience_items": [
+    {
+      "title": "Junior Full-Stack Developer",
+      "company": "Valencia Innovation Capital.",
+      "years": "2025",
+      "description": "Together with my team and Data Science, we developed a platform with a dashboard and calendar for startups in Valencia, improving UX and reducing load times by 30%."
+    },
+    {
+      "title": "Backend Developer",
+      "company": "The Bridge",
+      "years": "2025",
+      "description": "Developed Node.js microservices and managed PostgreSQL databases, optimizing queries and system performance."
+    },
+    {
+  "title": "Junior Developer",
+  "company": "Freelance",
+  "years": "2025",
+  "description": "I designed UI components in React and helped fix bugs to improve the application's stability."
+},
+{
+  "title": "Systems Administrator",
+  "company": "Catholic University of Valencia",
+  "years": "2010",
+  "description": "I provided support for the university's equipment, as well as repaired, updated, and created local networks for students."
+},
+{
+  "title": "Systems Administrator",
+  "company": "Local Police of Torrent",
+  "years": "2009",
+  "description": "I provided support for police computer systems, created a local cloud-based storage system for them, and reinforced security to prevent intrusions."
+}
+
+  ],
+
+  "resume_skills_items": [
+    { "name": "React", "icon": "/react-2.svg" },
+    { "name": "Node.js", "icon": "/nodejs-2.svg", "class": "icon-node" },
+    { "name": "MongoDB", "icon": "/mongodb.svg" },
+    { "name": "TypeScript", "icon": "/typescript-2.svg" },
+    { "name": "JavaScript", "icon": "/js.png" },
+    { "name": "HTML", "icon": "/html-1.svg" },
+    { "name": "CSS", "icon": "/css-3.svg" },
+    { "name": "MySQL", "icon": "/mysql-logo-pure.svg" },
+    { "name": "PostgreSQL", "icon": "/postgresql.svg" },
+    { "name": "Express", "icon": "/express-109.svg" },
+    { "name": "Redux", "icon": "/redux.svg" }
+  ],
+
+  "resume_education_items": [
+    {
+      "title": "Full Stack Web Development (MERN)",
+      "institution": "The Bridge",
+      "years": "2025"
+    },
+    {
+      "title": "Film Directing Master's Degree",
+      "institution": "ESCAC",
+      "years": "2018–2019"
+    },
+    {
+      "title": "Audiovisual Communication Bachelor's Degree",
+      "institution": "CEU San Pablo",
+      "years": "2010–2015"
+    },
+    {
+      "title": "ASIR (Networked Computer Systems Administration)",
+      "institution": "Florida Universitaria",
+      "years": "2008–2010"
+    }
+  ],
+  
+  "contact_title": "Contact",
+  "contact_sub": "Got an idea? Let’s talk and launch it ",
+  "contact_name_label": "Your name",
+  "contact_email_label": "Your email",
+  "contact_message_label": "Your message",
+  "contact_send": "Send message",
+  "contact_sending": "Sending…",
+  "contact_sent_ok": "✅ Message sent. Thanks!",
+  "contact_sent_error": "⚠️ Couldn’t send your message. Please try again.",
+
+
+
+
+  "portfolio_title": "My Projects",
+  "portfolio_desc": "Some of the projects I’ve developed combining creativity and code.",
+
+  "footer_contact": "Shall we work together?",
+  "footer_made": "Made with React + Vite"
+}

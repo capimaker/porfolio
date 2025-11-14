@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-opacity="1" stop-color="#0b1020"/>
+      <stop offset="1" stop-opacity="1" stop-color="#091129"/>
+    </linearGradient>
+
+    <!-- Glow filter -->
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Panel gradient -->
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#111a33"/>
+      <stop offset="1" stop-color="#0d152b"/>
+    </linearGradient>
+
+    <!-- Stroke gradient -->
+    <linearGradient id="stroke" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4ec8ff"/>
+      <stop offset="1" stop-color="#7ad1ff"/>
+    </linearGradient>
+
+    <!-- Button gradient -->
+    <linearGradient id="btn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2e9df7"/>
+      <stop offset="1" stop-color="#1a79e8"/>
+    </linearGradient>
+
+    <!-- Input gradient -->
+    <linearGradient id="input" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#162340"/>
+      <stop offset="1" stop-color="#111c35"/>
+    </linearGradient>
+
+    <style><![CDATA[
+      .title { fill: #e6f3ff; font-weight: 700; letter-spacing: 2px; }
+      /* Use a generic futuristic sans fallbacks */
+      .title, .label, .meta { font-family: ui-sans-serif, system-ui, -apple-system,
+                               Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif; }
+      .label { fill: #b5c7e6; font-size: 16px; }
+      .meta  { fill: #94a9cd; font-size: 14px; }
+      .btnText { fill: white; font-weight: 700; font-size: 18px; }
+      .small { fill: #9bb6df; font-size: 14px; }
+    ]]></style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="960" height="540" fill="url(#bg)"/>
+
+  <!-- Stars (minimal, performant) -->
+  <g opacity="0.8">
+    <circle cx="120" cy="80" r="1.5" fill="#cfe8ff"/>
+    <circle cx="260" cy="140" r="1" fill="#b8d7ff"/>
+    <circle cx="450" cy="60" r="1.2" fill="#cfe8ff"/>
+    <circle cx="700" cy="110" r="1.4" fill="#d9eeff"/>
+    <circle cx="860" cy="70" r="1" fill="#cfe8ff"/>
+    <circle cx="180" cy="300" r="1.2" fill="#cfe8ff"/>
+    <circle cx="360" cy="240" r="1" fill="#b8d7ff"/>
+    <circle cx="520" cy="310" r="1.5" fill="#d9eeff"/>
+    <circle cx="740" cy="280" r="1.1" fill="#cfe8ff"/>
+    <circle cx="880" cy="360" r="1.3" fill="#cfe8ff"/>
+    <circle cx="90"  cy="430" r="1.1" fill="#cfe8ff"/>
+    <circle cx="300" cy="460" r="1.2" fill="#b8d7ff"/>
+    <circle cx="560" cy="440" r="1.2" fill="#d9eeff"/>
+    <circle cx="780" cy="490" r="1.1" fill="#cfe8ff"/>
+  </g>
+
+  <!-- Title / Logo (modern & clean) -->
+  <g transform="translate(480,120)">
+    <text class="title" text-anchor="middle" font-size="44">CHEWBOOKA</text>
+    <!-- subtle underline accent -->
+    <rect x="-115" y="22" width="230" height="2" rx="1" fill="url(#stroke)" opacity="0.6"/>
+  </g>
+
+  <!-- Login card -->
+  <g transform="translate(480,320)">
+    <!-- Glowing outer -->
+    <rect x="-260" y="-130" rx="20" ry="20" width="520" height="260"
+          fill="url(#panel)" stroke="url(#stroke)" stroke-width="1.2"
+          filter="url(#softGlow)" opacity="0.98"/>
+
+    <!-- Email field -->
+    <g transform="translate(-220,-80)">
+      <rect width="440" height="56" rx="12" fill="url(#input)" stroke="#233155" stroke-width="1"/>
+      <text class="label" x="18" y="34">Email or phone</text>
+      <!-- Input shine -->
+      <rect x="1" y="1" width="438" height="12" rx="12" fill="white" opacity="0.03"/>
+    </g>
+
+    <!-- Password field -->
+    <g transform="translate(-220,-12)">
+      <rect width="440" height="56" rx="12" fill="url(#input)" stroke="#233155" stroke-width="1"/>
+      <text class="label" x="18" y="34">Password</text>
+      <rect x="1" y="1" width="438" height="12" rx="12" fill="white" opacity="0.03"/>
+    </g>
+
+    <!-- Login button -->
+    <g transform="translate(-220,56)">
+      <rect width="440" height="56" rx="14" fill="url(#btn)" stroke="#5fb4ff" stroke-width="1"/>
+      <text class="btnText" x="220" y="36" text-anchor="middle">Log In</text>
+    </g>
+
+    <!-- Forgot password -->
+    <text class="small" text-anchor="middle" x="0" y="126">Forgot password?</text>
+  </g>
+
+  <!-- Corner accents -->
+  <g opacity="0.35">
+    <rect x="36" y="36" width="80" height="2" rx="1" fill="url(#stroke)"/>
+    <rect x="36" y="36" width="2" height="80" rx="1" fill="url(#stroke)"/>
+    <rect x="842" y="36" width="80" height="2" rx="1" transform="scale(-1,1) translate(-1764,0)" fill="url(#stroke)"/>
+    <rect x="842" y="36" width="2" height="80" rx="1" transform="scale(-1,1) translate(-1688,0)" fill="url(#stroke)"/>
+  </g>
+</svg>
