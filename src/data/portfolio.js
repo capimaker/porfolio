@@ -5,6 +5,7 @@ import patiback from "../assets/patiback.gif";
 import akiba from "../assets/akibamarkt.png";
 import Mentorship from "../assets/mentorship.png";
 import Chewbooka from "../assets/chewbooka.svg";
+import nexus from "../assets/nexusapp.png";
 
 export const projects = [
   {
@@ -27,7 +28,7 @@ export const projects = [
     title: "Nexus",
     tag: "API + Front",
     type: "backend", 
-    img: placeholder,
+    img: nexus,
     // Si en el futuro tienes demo:
     // demo: "Live Demo",
     // url: "https://tu-demo-de-nexus.com",
