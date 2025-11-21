@@ -46,12 +46,12 @@ export default function Portfolio() {
 
                   <div className="project-links">
                     <a
-                      href={p.demo}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="btn ghost"
+                     href={p.url}                 
+                     target="_blank"
+                     rel="noreferrer"
+                     className="btn ghost"
                     >
-                      🔗 Demo
+                     🔗 {p.demo || "Demo"}        
                     </a>
                     <a
                       href={p.repo}
