@@ -19,14 +19,14 @@ export const projects = [
   },
   {
     title: "ChewBooka",
-    tag: "Social App",
+    tag: "Social App Node.js + Express/sequelize + MongoDB",
     type: "backend",
     img: Chewbooka,
     repo: "https://github.com/capimaker/Chewbooka_back",
   },
   {
     title: "Nexus",
-    tag: "API + Front",
+    tag: "TS + PostgreSQL + Node.js",
     type: "backend", 
     img: nexus,
     // Si en el futuro tienes demo:
@@ -36,14 +36,14 @@ export const projects = [
   },
   {
     title: "Mentorship",
-    tag: "Dashboard",
+    tag: "Dashboard React + Redux",
     type: "frontend",
     img: Mentorship,
     repo: "https://github.com/capimaker/startApp",
   },
   {
     title: "PatitApp",
-    tag: "Social Web App React",
+    tag: "Social Web App React ",
     type: "frontend",
     img: patitapp,
     demo: "Live Demo",
@@ -52,7 +52,7 @@ export const projects = [
   },
   {
     title: "PatitApp API",
-    tag: "Social Web App Node.js",
+    tag: "Social Web App Node.js + Express + MongoDB",
     type: "backend",
     img: patiback,
     repo: "https://github.com/capimaker/PatitasBackend",
