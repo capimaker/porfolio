@@ -38,25 +38,42 @@ export default function Portfolio() {
         {/* Grid */}
         <div className="portfolio-grid">
           {filteredProjects.map((p, i) => (
-            <div className="thumb" key={i}>
-              <picture>
-                {p.imgAvif && <source srcSet={p.imgAvif} type="image/avif" />}
-                {p.imgWebp && <source srcSet={p.imgWebp} type="image/webp" />}
-                <img
-                  src={p.img || placeholderImg}
-                  alt={p.title}
-                  loading="lazy"
-                  onError={(e) => {
-                    if (e.currentTarget.src !== placeholderImg) {
-                      e.currentTarget.src = placeholderImg;
-                    }
-                  }}
-                />
-              </picture>
-              <div className="overlay">
-                <div>
+            <div className="thumb flip-card" key={i}>
+              <div className="flip-inner">
+                <div className="flip-front">
+                  <picture>
+                    {p.imgAvif && <source srcSet={p.imgAvif} type="image/avif" />}
+                    {p.imgWebp && <source srcSet={p.imgWebp} type="image/webp" />}
+                    <img
+                      src={p.img || placeholderImg}
+                      alt={p.title}
+                      loading="lazy"
+                      onError={(e) => {
+                        if (e.currentTarget.src !== placeholderImg) {
+                          e.currentTarget.src = placeholderImg;
+                        }
+                      }}
+                    />
+                  </picture>
+                </div>
+
+                <div className="flip-back">
                   <span className="proj-title">{p.title}</span>
                   <p className="proj-tag">{p.tag}</p>
+
+                  {Array.isArray(p.techs) && p.techs.length > 0 && (
+                    <div className="proj-techs" aria-label={t("portfolio_tech_stack", { defaultValue: "Tech stack" })}>
+                      {p.techs.map((tech, idx) => (
+                        <img
+                          key={`${tech.name}-${idx}`}
+                          src={tech.icon}
+                          alt={tech.name}
+                          className="tech-icon"
+                          loading="lazy"
+                        />
+                      ))}
+                    </div>
+                  )}
 
                   <div className="proj-badges">
                     {p.url && <span className="badge">{t("portfolio_badge_demo")}</span>}
