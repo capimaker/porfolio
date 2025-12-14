@@ -1,18 +1,24 @@
-import placeholder from "../assets/placeholder.jpg";
-import arka from "../assets/arka.png";
-import patitapp from "../assets/patitapp.png";
+import arkaWebp from "../assets/arka.webp";
+import arkaAvif from "../assets/arka.avif";
+import patitappWebp from "../assets/patitapp.webp";
+import patitappAvif from "../assets/patitapp.avif";
 import patiback from "../assets/patiback.gif";
-import akiba from "../assets/akibamarkt.png";
-import Mentorship from "../assets/mentorship.png";
+import akibaWebp from "../assets/akibamarkt.webp";
+import akibaAvif from "../assets/akibamarkt.avif";
+import mentorshipWebp from "../assets/mentorship.webp";
+import mentorshipAvif from "../assets/mentorship.avif";
 import Chewbooka from "../assets/chewbooka.svg";
-import nexus from "../assets/nexusapp.png";
+import nexusWebp from "../assets/nexusapp.webp";
+import nexusAvif from "../assets/nexusapp.avif";
 
 export const projects = [
   {
     title: "AkibaMart",
     tag: "E-commerce React + Context",
     type: "frontend",
-    img: akiba,
+    img: akibaWebp,
+    imgWebp: akibaWebp,
+    imgAvif: akibaAvif,
     demo: "Live Demo",
     url: "https://akibamart.vercel.app/",
     repo: "https://github.com/capimaker/akibamart",
@@ -27,25 +33,28 @@ export const projects = [
   {
     title: "Nexus",
     tag: "TS + PostgreSQL + Node.js",
-    type: "backend", 
-    img: nexus,
-    // Si en el futuro tienes demo:
-    // demo: "Live Demo",
-    // url: "https://tu-demo-de-nexus.com",
-    repo: "https://github.com/capimaker/nexusbk", // cámbialo cuando tengas repo real de Nexus
+    type: "backend",
+    img: nexusWebp,
+    imgWebp: nexusWebp,
+    imgAvif: nexusAvif,
+    repo: "https://github.com/capimaker/nexusbk", // cambialo cuando tengas repo real de Nexus
   },
   {
     title: "Mentorship",
     tag: "Dashboard React + Redux",
     type: "frontend",
-    img: Mentorship,
+    img: mentorshipWebp,
+    imgWebp: mentorshipWebp,
+    imgAvif: mentorshipAvif,
     repo: "https://github.com/capimaker/startApp",
   },
   {
     title: "PatitApp",
     tag: "Social Web App React ",
     type: "frontend",
-    img: patitapp,
+    img: patitappWebp,
+    imgWebp: patitappWebp,
+    imgAvif: patitappAvif,
     demo: "Live Demo",
     url: "https://patit-app.vercel.app/",
     repo: "https://github.com/capimaker/patitApp",
@@ -61,7 +70,9 @@ export const projects = [
     title: "ArkaScript",
     tag: "Javascript Vanilla Game",
     type: "frontend",
-    img: arka,
+    img: arkaWebp,
+    imgWebp: arkaWebp,
+    imgAvif: arkaAvif,
     demo: "Live Demo",
     url: "https://capimaker.github.io/Arkascript/",
     repo: "https://github.com/capimaker/Arkascript",

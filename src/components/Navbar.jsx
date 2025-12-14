@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import LanguageSwitchFlags from "./LanguageSwitchFlags";
 
 export default function Navbar() {
-  const { i18n } = useTranslation();
+  const { t } = useTranslation();
   const [active, setActive] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
@@ -26,33 +26,42 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
   const links = [
-    { id: "home", label: "Home" },
-    { id: "resume", label: "Resume" },
-    { id: "portfolio", label: "Portfolio" },
-    { id: "contact", label: "Contacto" },
+    { id: "home", label: t("nav_home") },
+    { id: "resume", label: t("nav_resume") },
+    { id: "portfolio", label: t("nav_portfolio") },
+    { id: "contact", label: t("nav_contact") },
   ];
 
   const handleLinkClick = () => setMenuOpen(false);
+  const handleLanguageChange = () => setMenuOpen(false);
 
   return (
     <nav className="nav">
       <div className="container nav-inner">
-        <div className="brand">Carlos <span>Ramos</span></div>
-        <div className="nav-right" style={{ display:"flex", alignItems:"center", gap:10 }}>
-  {/* <LanguageSwitch /> */}
-  <LanguageSwitchFlags />
-  
-</div>
+        <div className="brand">
+          Carlos <span>Ramos</span>
+        </div>
 
-       
+        <div className="nav-right" style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <LanguageSwitchFlags onChange={handleLanguageChange} />
+        </div>
 
         <button
           className={`hamburger ${menuOpen ? "active" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menu"
         >
-          <span></span><span></span><span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
 
         <div className={`menu ${menuOpen ? "open" : ""}`}>
@@ -67,14 +76,18 @@ export default function Navbar() {
             </a>
           ))}
 
-          {/* Botón de tema */}
-          <button className="theme-toggle" onClick={toggleTheme}>
-            {theme === "dark" ? "☀️" : "🌙"}
+          <button
+            className="theme-toggle"
+            onClick={() => {
+              toggleTheme();
+              setMenuOpen(false);
+            }}
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? "🌙" : "☀️"}
           </button>
         </div>
       </div>
     </nav>
   );
 }
-
-

@@ -23,7 +23,7 @@ export default function ScrollParallaxBg() {
 
         // Desplazamientos sutiles (ajusta a tu gusto)
         const x = 50 + (t * 20 - 10);             // -10% a +10% horizontal
-        const y = 50 + Math.sin(t * 2 * Math.PI) * 6; // oscilación vertical ~±6%
+        const y = 50 + Math.sin(t * 2 * Math.PI) * 6; // oscilacion vertical ~6%
 
         root.style.setProperty("--bg-x", `${x}%`);
         root.style.setProperty("--bg-y", `${y}%`);
@@ -32,7 +32,7 @@ export default function ScrollParallaxBg() {
       });
     };
 
-    // inicializa posición
+    // inicializa posicion
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);

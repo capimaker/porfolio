@@ -50,24 +50,23 @@
       "description": "Developed Node.js microservices and managed PostgreSQL databases, optimizing queries and system performance."
     },
     {
-  "title": "Junior Developer",
-  "company": "Freelance",
-  "years": "2025",
-  "description": "I designed UI components in React and helped fix bugs to improve the application's stability."
-},
-{
-  "title": "Systems Administrator",
-  "company": "Catholic University of Valencia",
-  "years": "2010",
-  "description": "I provided support for the university's equipment, as well as repaired, updated, and created local networks for students."
-},
-{
-  "title": "Systems Administrator",
-  "company": "Local Police of Torrent",
-  "years": "2009",
-  "description": "I provided support for police computer systems, created a local cloud-based storage system for them, and reinforced security to prevent intrusions."
-}
-
+      "title": "Junior Developer",
+      "company": "Freelance",
+      "years": "2025",
+      "description": "I designed UI components in React and helped fix bugs to improve the application's stability."
+    },
+    {
+      "title": "Systems Administrator",
+      "company": "Catholic University of Valencia",
+      "years": "2010",
+      "description": "I provided support for the university's equipment, as well as repaired, updated, and created local networks for students."
+    },
+    {
+      "title": "Systems Administrator",
+      "company": "Local Police of Torrent",
+      "years": "2009",
+      "description": "I provided support for police computer systems, created a local cloud-based storage system for them, and reinforced security to prevent intrusions."
+    }
   ],
 
   "resume_skills_items": [
@@ -93,35 +92,40 @@
     {
       "title": "Film Directing Master's Degree",
       "institution": "ESCAC",
-      "years": "2018–2019"
+      "years": "2018-2019"
     },
     {
       "title": "Audiovisual Communication Bachelor's Degree",
       "institution": "CEU San Pablo",
-      "years": "2010–2015"
+      "years": "2010-2015"
     },
     {
       "title": "ASIR (Networked Computer Systems Administration)",
       "institution": "Florida Universitaria",
-      "years": "2008–2010"
+      "years": "2008-2010"
     }
   ],
   
   "contact_title": "Contact",
-  "contact_sub": "Got an idea? Let’s talk and launch it ",
+  "contact_sub": "Got an idea? Let's talk and launch it",
   "contact_name_label": "Your name",
   "contact_email_label": "Your email",
   "contact_message_label": "Your message",
   "contact_send": "Send message",
-  "contact_sending": "Sending…",
-  "contact_sent_ok": "✅ Message sent. Thanks!",
-  "contact_sent_error": "⚠️ Couldn’t send your message. Please try again.",
-
-
-
+  "contact_sending": "Sending...",
+  "contact_sent_ok": "Message sent. Thanks!",
+  "contact_sent_error": "Couldn't send your message. Please try again.",
 
   "portfolio_title": "My Projects",
-  "portfolio_desc": "Some of the projects I’ve developed combining creativity and code.",
+  "portfolio_desc": "Some of the projects I've developed combining creativity and code.",
+  "portfolio_tab_all": "All",
+  "portfolio_tab_frontend": "Frontend",
+  "portfolio_tab_backend": "Backend",
+  "portfolio_btn_demo": "Demo",
+  "portfolio_btn_repo": "GitHub",
+  "portfolio_badge_demo": "Demo",
+  "portfolio_badge_repo": "Repo",
+  "portfolio_empty": "No projects to show here yet.",
 
   "footer_contact": "Shall we work together?",
   "footer_made": "Made with React + Vite"

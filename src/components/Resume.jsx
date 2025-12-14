@@ -13,13 +13,13 @@ export default function Resume() {
 
     const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
     if (reduce) {
-      root.querySelectorAll(".reveal-item").forEach(el => el.classList.add("is-visible"));
+      root.querySelectorAll(".reveal-item").forEach((el) => el.classList.add("is-visible"));
       return;
     }
 
     const obs = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
+      (entries) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("is-visible");
             obs.unobserve(entry.target);
@@ -29,7 +29,7 @@ export default function Resume() {
       { rootMargin: "0px 0px -10% 0px", threshold: 0.15 }
     );
 
-    root.querySelectorAll(".reveal-item").forEach(el => obs.observe(el));
+    root.querySelectorAll(".reveal-item").forEach((el) => obs.observe(el));
     return () => obs.disconnect();
   }, [active]);
 
@@ -53,11 +53,13 @@ export default function Resume() {
                   className="timeline-item reveal-item"
                   style={{ "--d": `${idx * 90}ms` }}
                 >
-                  <div className="timeline-icon">💼</div>
+                  <div className="timeline-icon" aria-hidden="true">
+                    &bull;
+                  </div>
                   <div className="timeline-content">
                     <h4>{exp.title}</h4>
                     <p className="org">
-                      {exp.company} · <span>{exp.years}</span>
+                      {exp.company} - <span>{exp.years}</span>
                     </p>
                     <p className="desc">{exp.description}</p>
                   </div>
@@ -101,11 +103,13 @@ export default function Resume() {
                   className="timeline-item reveal-item"
                   style={{ "--d": `${idx * 90}ms` }}
                 >
-                  <div className="timeline-icon">🎓</div>
+                  <div className="timeline-icon" aria-hidden="true">
+                    &bull;
+                  </div>
                   <div className="timeline-content">
                     <h4>{edu.title}</h4>
                     <p className="org">
-                      {edu.institution} · <span>{edu.years}</span>
+                      {edu.institution} - <span>{edu.years}</span>
                     </p>
                   </div>
                 </div>
@@ -127,7 +131,7 @@ export default function Resume() {
           <h2 className="resume-title">{t("resume_title")}</h2>
         </div>
 
-         <div className="resume-socials">
+        <div className="resume-socials">
           <a href="https://github.com/capimaker" target="_blank" rel="noreferrer" aria-label="GitHub">
             <img src="/github.svg" alt="GitHub" />
           </a>
@@ -149,8 +153,6 @@ export default function Resume() {
         </div>
 
         <div className="resume-content">{renderContent()}</div>
-
-       
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
-export default function LanguageSwitchFlags() {
+export default function LanguageSwitchFlags({ onChange }) {
   const { i18n } = useTranslation();
   const current = (i18n.resolvedLanguage || i18n.language || "es").toLowerCase();
 
@@ -9,6 +9,7 @@ export default function LanguageSwitchFlags() {
     i18n.changeLanguage(lng);
     document.documentElement.setAttribute("lang", lng);
     localStorage.setItem("lng", lng);
+    if (onChange) onChange(lng);
   };
 
   useEffect(() => {
@@ -19,17 +20,15 @@ export default function LanguageSwitchFlags() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return {
-    /* usa emoji o SVGs /flags/es.svg y /flags/en.svg si los tienes */
-  } && (
+  return (
     <div className="lang-flags" role="group" aria-label="Language">
       <button
         className={`flag-btn ${current === "es" ? "active" : ""}`}
         onClick={() => setLng("es")}
         aria-pressed={current === "es"}
-        title="Español"
+        title="Espanol"
       >
-        <span className="flag-ico" aria-hidden="true">🇪🇸</span>
+        <span className="flag-ico" aria-hidden="true">ES</span>
         <span className="flag-txt">ES</span>
       </button>
       <button
@@ -38,7 +37,7 @@ export default function LanguageSwitchFlags() {
         aria-pressed={current === "en"}
         title="English"
       >
-        <span className="flag-ico" aria-hidden="true">🇬🇧</span>
+        <span className="flag-ico" aria-hidden="true">EN</span>
         <span className="flag-txt">EN</span>
       </button>
     </div>

@@ -7,7 +7,7 @@
 
   "hero_subtitle": "Desarrollador Full Stack y Filmmaker",
   "hero_title": "Hola, soy Carlos",
-  "hero_desc": "Me llamo Carlos Ramos pero mis amigos me llaman capi. Empecé en la programación con un IBM en el colegio, tenía 8 años. Actualmente me he formado como desarrollador Full Stack MERN.",
+  "hero_desc": "Me llamo Carlos Ramos pero mis amigos me llaman Capi. Empecé en la programación con un IBM en el colegio, tenía 8 años. Actualmente me he formado como desarrollador Full Stack MERN.",
   "btn_projects": "Ver proyectos",
   "btn_cv": "Descargar CV",
 
@@ -40,8 +40,8 @@
     {
       "title": "Desarrollador Full-Stack Junior",
       "company": "Valencia Innovation Capital",
-      "years": " 2025",
-      "description": "Junto con mi equipo y Data science, desarrollamos una plataforma con dashboard y agenda para starups de valencia , mejorando la experiencia de usuario y reduciendo los tiempos de carga en un 30%."
+      "years": "2025",
+      "description": "Junto con mi equipo y Data Science, desarrollamos una plataforma con dashboard y agenda para startups de Valencia, mejorando la experiencia de usuario y reduciendo los tiempos de carga en un 30%."
     },
     {
       "title": "Desarrollador Backend",
@@ -57,15 +57,15 @@
     },
     {
       "title": "Administrador de sistemas",
-      "company": "universidad catolica de Valencia",
+      "company": "Universidad Católica de Valencia",
       "years": "2010",
       "description": "Me encargué de dar soporte a los equipos de la universidad, así como reparar, actualizar y crear redes locales para los alumnos."
     },
     {
       "title": "Administrador de sistemas",
-      "company": "Policía local de Torrent",
+      "company": "Policía Local de Torrent",
       "years": "2009",
-      "description": "Me encargué de dar soporte a los equipos de la policía, crearles un sistema de guardado en nube local, blindar los sistemas para que no hubieran intrusiones."
+      "description": "Me encargué de dar soporte a los equipos de la policía, crearles un sistema de guardado en nube local y blindar los sistemas para evitar intrusiones."
     }
   ],
 
@@ -90,37 +90,42 @@
       "years": "2025"
     },
     {
-      "title": "Master en Dirección Cinematográfica",
+      "title": "Máster en Dirección Cinematográfica",
       "institution": "ESCAC",
-      "years": "2018–2019"
+      "years": "2018-2019"
     },
     {
       "title": "Grado en Comunicación Audiovisual",
       "institution": "CEU San Pablo",
-      "years": "2010–2015"
+      "years": "2010-2015"
     },
     {
       "title": "ASIR (Administración de Sistemas Informáticos en Red)",
       "institution": "Florida Universitaria",
-      "years": "2008–2010"
+      "years": "2008-2010"
     }
   ],
 
-  
   "contact_title": "Contacto",
-  "contact_sub": "¿Tienes una idea? Hablemos y la lanzamos ",
+  "contact_sub": "¿Tienes una idea? Hablemos y la lanzamos",
   "contact_name_label": "Tu nombre",
   "contact_email_label": "Tu email",
   "contact_message_label": "Tu mensaje",
   "contact_send": "Enviar mensaje",
-  "contact_sending": "Enviando…",
-  "contact_sent_ok": "✅ Mensaje enviado. ¡Gracias!",
-  "contact_sent_error": "⚠️ No se pudo enviar tu mensaje. Intenta de nuevo.",
-
-
+  "contact_sending": "Enviando...",
+  "contact_sent_ok": "Mensaje enviado. ¡Gracias!",
+  "contact_sent_error": "No se pudo enviar tu mensaje. Intenta de nuevo.",
 
   "portfolio_title": "Mis proyectos",
   "portfolio_desc": "Algunos de los proyectos que he desarrollado combinando creatividad y código.",
+  "portfolio_tab_all": "Todos",
+  "portfolio_tab_frontend": "Frontend",
+  "portfolio_tab_backend": "Backend",
+  "portfolio_btn_demo": "Demo",
+  "portfolio_btn_repo": "GitHub",
+  "portfolio_badge_demo": "Demo",
+  "portfolio_badge_repo": "Repo",
+  "portfolio_empty": "No hay proyectos para mostrar por ahora.",
 
   "footer_contact": "¿Trabajamos juntos?",
   "footer_made": "Hecho con React + Vite"

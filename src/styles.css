@@ -49,9 +49,17 @@ body{
 
 /* helpers */
 .container{ width:min(1000px, 92%); margin:auto; }
-.section{ padding:180px 0; }
+.section{ padding:140px 0; }
 .section h2{
   text-align:center; margin:0 0 30px; letter-spacing:.5px; font-weight:700;
+}
+
+@media (max-width: 980px){
+  .section{ padding:110px 0; }
+}
+
+@media (max-width: 560px){
+  .section{ padding:80px 0; }
 }
 
 /* ===================== THEME TOGGLE ===================== */
@@ -66,7 +74,7 @@ body{
 .nav {
   position: fixed; top: 0; width: 100%; z-index: 1000;
   background: rgba(10, 15, 40, 0.6);
-  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 .nav-inner { display:flex; align-items:center; justify-content:space-between; height:64px; }
@@ -90,7 +98,7 @@ body{
 .menu {
   position: fixed; top:64px; left:0; right:0;
   background: rgba(15, 20, 50, 0.96);
-  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
   display:flex; flex-direction:column; align-items:center; gap:24px; padding:24px 0;
   transform: translateY(-120%); transition: transform .4s ease;
 }
@@ -104,7 +112,7 @@ body{
   .hamburger { display:none; }
   .menu {
     position: static; flex-direction: row; background: transparent;
-    backdrop-filter:none; -webkit-backdrop-filter:none; gap:16px; padding:0; transform:none; height:auto;
+    -webkit-backdrop-filter:none; backdrop-filter:none; gap:16px; padding:0; transform:none; height:auto;
   }
 }
 
@@ -140,8 +148,8 @@ body{
 .hero-title { font-size:44px; line-height:1.2; margin:10px 0 16px;
 background: linear-gradient(to right, rgb(137,2,255), rgb(4, 176, 255));
 color:transparent;
-background-clip: text;
--webkit-background-clip: text;}
+-webkit-background-clip: text;
+background-clip: text;}
 .glow-text { color:var(--acc); text-shadow: 0 0 10px rgba(62,166,255,.5), 0 0 20px rgba(62,166,255,.3); }
 .hero-desc { color:var(--muted); max-width:10ch; line-height:1.6; font-weight:300; }
 .avatar-glow {
@@ -226,8 +234,8 @@ background-clip: text;
 /* ===================== PORTFOLIO ===================== */
 h2 {background: linear-gradient(to right, rgb(137,2,255), rgb(4, 176, 255));
 color:transparent;
-background-clip: text;
--webkit-background-clip: text;}
+-webkit-background-clip: text;
+background-clip: text;}
 .portfolio-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:14px; }
 .thumb{ position:relative; border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,.08); }
 .thumb img{ width:100%; height:240px; object-fit:cover; display:block; }
@@ -318,9 +326,25 @@ background-clip: text;
 }
 
 .proj-tag {
-  color: var(--muted);
-  font-size: 14px;
-  margin-bottom: 12px;
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+.proj-badges{
+    display:flex;
+    gap:8px;
+    margin:8px 0 12px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+.badge{
+    background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.2);
+    color:var(--text);
+    padding:4px 10px;
+    border-radius:12px;
+    font-size:12px;
+    letter-spacing:0.2px;
 }
 
 .portfolio-desc {
@@ -414,8 +438,8 @@ footer{
 .contact-wrap { text-align:center;
 background: linear-gradient(to right, rgb(137,2,255), rgb(4, 176, 255));
 color:transparent;
-background-clip: text;
--webkit-background-clip: text; }
+-webkit-background-clip: text;
+background-clip: text; }
 .contact-sub { color:var(--muted); margin:-6px 0 22px; }
 
 /* ===== Glass card con borde degradado animado ===== */
@@ -429,8 +453,8 @@ background-clip: text;
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(255,255,255,0.10);
   box-shadow: var(--shadow);
-  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   isolation: isolate;
 }
 
@@ -590,8 +614,8 @@ background-clip: text;
   border-radius: 999px;
   padding: 3px;
   box-shadow: 0 6px 16px rgba(0,0,0,.25);
-  backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
 }
 
 .seg-btn{
@@ -640,8 +664,8 @@ background-clip: text;
   border-radius: 12px;
   padding: 4px;
   box-shadow: 0 6px 16px rgba(0,0,0,.25);
-  backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
 }
 .flag-btn{
   display: inline-flex;

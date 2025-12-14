@@ -1,6 +1,7 @@
 import React from "react";
-import { motion } from "framer-motion";
-import avatar from "../assets/yo.png";
+import { motion as Motion } from "framer-motion";
+import avatarWebp from "../assets/yo.webp";
+import avatarAvif from "../assets/yo.avif";
 import { useTranslation } from "react-i18next";
 
 export default function Hero() {
@@ -8,8 +9,8 @@ export default function Hero() {
 
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/public/CarlosRamos_CV.pdf"; // ruta al archivo PDF     
-    link.download = "CarlosRamos_CV.pdf";       // nombre del archivo al descargar
+    link.href = "/CarlosRamos_CV.pdf"; // archivo en la carpeta public
+    link.download = "CarlosRamos_CV.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -18,7 +19,7 @@ export default function Hero() {
   return (
     <section id="home" className="hero">
       <div className="container hero-grid">
-        <motion.div
+        <Motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -40,18 +41,22 @@ export default function Hero() {
               {t("btn_cv")}
             </button>
           </div>
-        </motion.div>
+        </Motion.div>
 
-        <motion.div
+        <Motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.4, duration: 0.8 }}
           className="hero-card"
         >
           <div className="avatar-glow">
-            <img src={avatar} alt="Avatar de Carlos" className="avatar-img" />
+            <picture>
+              <source srcSet={avatarAvif} type="image/avif" />
+              <source srcSet={avatarWebp} type="image/webp" />
+              <img src={avatarWebp} alt="Avatar de Carlos" className="avatar-img" loading="lazy" />
+            </picture>
           </div>
-        </motion.div>
+        </Motion.div>
       </div>
     </section>
   );

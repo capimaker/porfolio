@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { projects } from "../data/portfolio";
 import { useTranslation } from "react-i18next";
+import placeholderImg from "../assets/placeholder.jpg";
 
 export default function Portfolio() {
   const { t } = useTranslation();
@@ -10,9 +11,9 @@ export default function Portfolio() {
     filter === "all" ? projects : projects.filter((p) => p.type === filter);
 
   const tabs = [
-    
-    { id: "frontend", label: "Frontend" },
-    { id: "backend", label: "Backend" },
+    { id: "all", label: t("portfolio_tab_all") },
+    { id: "frontend", label: t("portfolio_tab_frontend") },
+    { id: "backend", label: t("portfolio_tab_backend") },
   ];
 
   return (
@@ -38,29 +39,53 @@ export default function Portfolio() {
         <div className="portfolio-grid">
           {filteredProjects.map((p, i) => (
             <div className="thumb" key={i}>
-              <img src={p.img} alt={p.title} />
+              <picture>
+                {p.imgAvif && <source srcSet={p.imgAvif} type="image/avif" />}
+                {p.imgWebp && <source srcSet={p.imgWebp} type="image/webp" />}
+                <img
+                  src={p.img || placeholderImg}
+                  alt={p.title}
+                  loading="lazy"
+                  onError={(e) => {
+                    if (e.currentTarget.src !== placeholderImg) {
+                      e.currentTarget.src = placeholderImg;
+                    }
+                  }}
+                />
+              </picture>
               <div className="overlay">
                 <div>
                   <span className="proj-title">{p.title}</span>
                   <p className="proj-tag">{p.tag}</p>
 
+                  <div className="proj-badges">
+                    {p.url && <span className="badge">{t("portfolio_badge_demo")}</span>}
+                    {p.repo && <span className="badge">{t("portfolio_badge_repo")}</span>}
+                  </div>
+
                   <div className="project-links">
-                    <a
-                     href={p.url}                 
-                     target="_blank"
-                     rel="noreferrer"
-                     className="btn ghost"
-                    >
-                     🔗 {p.demo || "Demo"}        
-                    </a>
-                    <a
-                      href={p.repo}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="btn ghost"
-                    >
-                      💻 GitHub
-                    </a>
+                    {p.url && (
+                      <a
+                        href={p.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn ghost"
+                        aria-label={`${t("portfolio_btn_demo")} ${p.title}`}
+                      >
+                        {p.demo || t("portfolio_btn_demo")}
+                      </a>
+                    )}
+                    {p.repo && (
+                      <a
+                        href={p.repo}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn ghost"
+                        aria-label={`GitHub ${p.title}`}
+                      >
+                        {t("portfolio_btn_repo")}
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
