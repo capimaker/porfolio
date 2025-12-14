@@ -1,16 +1,52 @@
-# React + Vite
+# Carlos Ramos – Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio built with React + Vite. It showcases selected frontend/back‑end projects, resume, services, and a contact form powered by EmailJS. The site supports Spanish/English, light/dark themes, and optimized media (AVIF/WebP fallbacks).
 
-Currently, two official plugins are available:
+## Tech stack
+- React 19 + Vite 7
+- i18next (ES/EN)
+- Framer Motion (animations)
+- EmailJS for the contact form
+- CSS (custom, responsive), prefers-reduced-motion friendly
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Quick start
+```bash
+npm install
+npm run dev
+```
+Open the URL printed by Vite (default `http://localhost:5173`).
 
-## React Compiler
+## Scripts
+- `npm run dev` – start dev server
+- `npm run build` – production build
+- `npm run preview` – preview the build
+- `npm run lint` – ESLint check
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## Environment variables
+Create `.env` with your EmailJS keys:
+```
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+```
 
-## Expanding the ESLint configuration
+## Structure (high level)
+- `src/components` – UI sections (Hero, Resume, Services, Portfolio, Contact, Navbar, Footer, etc.)
+- `src/data/portfolio.js` – project cards (includes AVIF/WebP fallbacks)
+- `src/locales/{es,en}.json` – translations
+- `src/assets` – images (prefer `.avif`/`.webp`; PNG/GIF only as fallback)
+- `src/styles.css` – global styles, layout, responsive rules
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Assets & performance
+- Images are provided in AVIF/WebP with PNG fallback when needed; portfolio cards use `<picture>` for best format selection.
+- Parallax/background respects `prefers-reduced-motion`.
+- Lazy loading on gallery images to reduce initial payload.
+
+## Accessibility & UX
+- Keyboard/focusable controls, ARIA labels on buttons/links.
+- Theme toggle and language switch close the mobile menu and lock body scroll when open.
+- Contact form includes a honeypot and live status messages.
+
+## Deployment notes
+- Static build via `npm run build` outputs to `dist/`.
+- Set correct `og:image` in `index.html` if you host under a custom domain and want rich previews.

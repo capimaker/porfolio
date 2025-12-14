@@ -686,7 +686,18 @@ background-clip: text; }
   outline: 2px solid var(--ring);
   background: rgba(62,166,255,.12);
 }
-.flag-ico{ display:block; font-size: 16px; line-height: 1; }
+.flag-ico{
+  display:block;
+  line-height: 1;
+}
+.flag-ico img{
+  width:20px;
+  height:14px;
+  display:block;
+  object-fit:cover;
+  border-radius:2px;
+  box-shadow:0 1px 3px rgba(0,0,0,.25);
+}
 .flag-txt{ display:block; }
 
 :root[data-theme='light'] .lang-flags{

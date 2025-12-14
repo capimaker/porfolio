@@ -26,9 +26,11 @@ export default function LanguageSwitchFlags({ onChange }) {
         className={`flag-btn ${current === "es" ? "active" : ""}`}
         onClick={() => setLng("es")}
         aria-pressed={current === "es"}
-        title="Espanol"
+        title="Español"
       >
-        <span className="flag-ico" aria-hidden="true">ES</span>
+        <span className="flag-ico" aria-hidden="true">
+          <img src="/flags/es.svg" alt="" />
+        </span>
         <span className="flag-txt">ES</span>
       </button>
       <button
@@ -37,7 +39,9 @@ export default function LanguageSwitchFlags({ onChange }) {
         aria-pressed={current === "en"}
         title="English"
       >
-        <span className="flag-ico" aria-hidden="true">EN</span>
+        <span className="flag-ico" aria-hidden="true">
+          <img src="/flags/en.svg" alt="" />
+        </span>
         <span className="flag-txt">EN</span>
       </button>
     </div>
