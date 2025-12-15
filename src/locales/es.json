@@ -79,7 +79,7 @@
     { "name": "CSS", "icon": "/css-3.svg" },
     { "name": "MySQL", "icon": "/mysql-logo-pure.svg" },
     { "name": "PostgreSQL", "icon": "/postgresql.svg" },
-    { "name": "Express", "icon": "/express-109.svg" },
+    { "name": "Express", "icon": "/express-109.svg", "class": "icon-express" },
     { "name": "Redux", "icon": "/redux.svg" }
   ],
 

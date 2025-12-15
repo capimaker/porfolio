@@ -10,6 +10,7 @@ import mentorshipAvif from "../assets/mentorship.avif";
 import Chewbooka from "../assets/chewbooka.svg";
 import nexusWebp from "../assets/nexusapp.webp";
 import nexusAvif from "../assets/nexusapp.avif";
+import placeholder from "../assets/placeholder.jpg";
 
 export const projects = [
   {
@@ -106,5 +107,19 @@ export const projects = [
     demo: "Live Demo",
     url: "https://capimaker.github.io/Arkascript/",
     repo: "https://github.com/capimaker/Arkascript",
+  },
+  {
+    title: "Coming Soon",
+    tag: "New project on the way",
+    type: "frontend",
+    img: nexusWebp,
+    techs: [],
+  },
+  {
+    title: "Coming Soon",
+    tag: "New project on the way",
+    type: "backend",
+    img: placeholder,
+    techs: [],
   },
 ];
