@@ -68,7 +68,7 @@ export default function Portfolio() {
                           key={`${tech.name}-${idx}`}
                           src={tech.icon}
                           alt={tech.name}
-                          className="tech-icon"
+                          className={`tech-icon ${tech.class || ""}`}
                           loading="lazy"
                         />
                       ))}

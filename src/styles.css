@@ -118,6 +118,18 @@ body{
 
 .active-link { color: var(--acc); border-bottom: 2px solid var(--acc); padding-bottom: 2px; }
 
+/* Light theme navbar contrast */
+:root[data-theme='light'] .nav { background: rgba(10, 15, 40, 0.7); }
+:root[data-theme='light'] .brand,
+:root[data-theme='light'] .menu a,
+:root[data-theme='light'] .hamburger span,
+:root[data-theme='light'] .nav .theme-toggle {
+  color: #fff;
+}
+:root[data-theme='light'] .menu a.active-link { color: var(--acc); border-bottom-color: var(--acc); }
+:root[data-theme='light'] .menu a:hover { color: var(--acc); }
+:root[data-theme='light'] .hamburger span { background:#fff; }
+
 /* ===================== HERO ===================== */
 .hero{
   padding:150px 0 100px;
@@ -233,9 +245,15 @@ background-clip: text;}
   display:flex; justify-content:center; gap:28px; opacity:.9;
 }
 .resume-socials img {
-  width:20px; height:20px; transition: transform .3s ease, filter .3s ease; filter: brightness(.9);
+  width:24px; height:24px; transition: transform .3s ease, filter .3s ease; filter: brightness(.9);
 }
 .resume-socials img:hover { transform: translateY(-4px) scale(1.05); filter: brightness(1.2); }
+:root[data-theme='light'] .resume-socials img {
+  filter: invert(23%) sepia(65%) saturate(2350%) hue-rotate(191deg) brightness(93%) contrast(96%);
+}
+:root[data-theme='light'] .resume-socials img:hover {
+  filter: invert(23%) sepia(65%) saturate(2350%) hue-rotate(191deg) brightness(103%) contrast(96%);
+}
 
 /* ===================== PORTFOLIO ===================== */
 h2 {background: linear-gradient(to right, rgb(137,2,255), rgb(4, 176, 255));
@@ -750,17 +768,24 @@ background-clip: text; }
     margin-bottom:4px;
   }
 .tech-icon{
-    width:27px;
-    height:27px;
+    width:26px !important;
+    height:26px !important;
     object-fit:contain;
     filter: drop-shadow(0 1px 1px rgba(0,0,0,.12));
-    opacity:0.8;
+    opacity:0.85;
     display:block;
   }
-/* force tiny tech icons */
-.proj-techs .tech-icon{
-  width:27px !important;
-  height:27px !important;
+/* express icon tweak */
+.tech-icon.icon-express{
+  width:40px !important;
+  height:auto !important;
+  max-height:24px !important;
+  background: rgba(255,255,255,0.14);
+  border-radius: 6px;
+  padding: 3px 6px;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.12);
+  object-fit: contain;
 }
 .proj-badges{
     display:flex;

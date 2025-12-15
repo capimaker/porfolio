@@ -35,7 +35,7 @@ export const projects = [
     img: Chewbooka,
     techs: [
       { name: "Node.js", icon: "/nodejs-2.svg" },
-      { name: "Express", icon: "/express-109.svg" },
+      { name: "Express", icon: "/express-109.svg", class: "icon-express" },
       { name: "MongoDB", icon: "/mongodb.svg" },
     ],
     repo: "https://github.com/capimaker/Chewbooka_back",
@@ -89,7 +89,7 @@ export const projects = [
     img: patiback,
     techs: [
       { name: "Node.js", icon: "/nodejs-2.svg" },
-      { name: "Express", icon: "/express-109.svg" },
+      { name: "Express", icon: "/express-109.svg", class: "icon-express" },
       { name: "MongoDB", icon: "/mongodb.svg" },
     ],
     repo: "https://github.com/capimaker/PatitasBackend",
