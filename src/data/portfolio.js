@@ -3,30 +3,29 @@ import arkaAvif from "../assets/arka.avif";
 import patitappWebp from "../assets/patitapp.webp";
 import patitappAvif from "../assets/patitapp.avif";
 import patiback from "../assets/patiback.gif";
-import akibaWebp from "../assets/akibamarkt.webp";
-import akibaAvif from "../assets/akibamarkt.avif";
+
 import mentorshipWebp from "../assets/mentorship.webp";
 import mentorshipAvif from "../assets/mentorship.avif";
 import Chewbooka from "../assets/chewbooka.svg";
 import nexusWebp from "../assets/nexusapp.webp";
 import nexusAvif from "../assets/nexusapp.avif";
+import apple from "../assets/apple.svg";
 import placeholder from "../assets/placeholder.jpg";
 
 export const projects = [
   {
-    title: "AkibaMart",
-    tag: "E-commerce React + Context",
+    title: "Apple Clone",
+    tag: "Macbook Product Page Clone",
     type: "frontend",
-    img: akibaWebp,
-    imgWebp: akibaWebp,
-    imgAvif: akibaAvif,
+    img: apple,
     techs: [
       { name: "React", icon: "/react-2.svg" },
-      { name: "CSS", icon: "/css-3.svg" },
+      { name: "tailwind", icon: "/tailwind.svg" },
+      { name: "three", icon: "/three.svg" },
     ],
     demo: "Live Demo",
-    url: "https://akibamart.vercel.app/",
-    repo: "https://github.com/capimaker/akibamart",
+    url: "https://appleclone-sooty.vercel.app/",
+    repo: "https://github.com/capimaker/appleclone",
   },
   {
     title: "ChewBooka",
@@ -109,17 +108,26 @@ export const projects = [
     repo: "https://github.com/capimaker/Arkascript",
   },
   {
-    title: "Coming Soon",
-    tag: "New project on the way",
+    title: "Apple Clone",
+    tag: "Macbook Product Page Clone",
     type: "frontend",
-    img: nexusWebp,
-    techs: [],
+    img: apple,
+    techs: [
+      { name: "React", icon: "/react-2.svg" },
+      { name: "tailwind", icon: "/tailwind.svg" },
+      { name: "three", icon: "/three.svg" },
+    ],
+    demo: "Live Demo",
+    url: "https://appleclone-sooty.vercel.app/",
+    repo: "https://github.com/capimaker/appleclone",
   },
   {
     title: "Coming Soon",
     tag: "New project on the way",
     type: "backend",
     img: placeholder,
-    techs: [],
+    techs: [
+      
+    ],
   },
 ];
