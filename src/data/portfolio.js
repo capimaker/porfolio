@@ -107,7 +107,7 @@ export const projects = [
     url: "https://capimaker.github.io/Arkascript/",
     repo: "https://github.com/capimaker/Arkascript",
   },
-  {
+  /* {
     title: "Apple Clone",
     tag: "Macbook Product Page Clone",
     type: "frontend",
@@ -130,4 +130,5 @@ export const projects = [
       
     ],
   },
+  */
 ];
