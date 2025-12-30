@@ -10,7 +10,7 @@ import Chewbooka from "../assets/chewbooka.svg";
 import nexusWebp from "../assets/nexusapp.webp";
 import nexusAvif from "../assets/nexusapp.avif";
 import apple from "../assets/apple.svg";
-import placeholder from "../assets/placeholder.jpg";
+
 
 export const projects = [
   {
