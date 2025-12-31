@@ -268,7 +268,16 @@ background-clip: text;}
   border:1px solid rgba(255,255,255,.08);
   height:260px;
 }
-.thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+.project-img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  background:#0c1729;
+}
+.project-img.project-img-contain{
+  object-fit:contain;
+}
 .thumb.flip-card{
   perspective:1000px;
 }
@@ -294,9 +303,6 @@ background-clip: text;}
 .flip-front picture,
 .flip-back picture{
   display:block; height:100%;
-}
-.flip-front img{
-  width:100%; height:100%; object-fit:cover; display:block;
 }
 .front-overlay{
   position:absolute; inset:0;

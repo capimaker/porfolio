@@ -6,10 +6,11 @@ import patiback from "../assets/patiback.gif";
 
 import mentorshipWebp from "../assets/mentorship.webp";
 import mentorshipAvif from "../assets/mentorship.avif";
-import Chewbooka from "../assets/chewbooka.svg";
+import enike from "../assets/enike.webp";
 import nexusWebp from "../assets/nexusapp.webp";
 import nexusAvif from "../assets/nexusapp.avif";
 import apple from "../assets/apple.svg";
+
 
 
 export const projects = [
@@ -28,16 +29,18 @@ export const projects = [
     repo: "https://github.com/capimaker/appleclone",
   },
   {
-    title: "ChewBooka",
-    tag: "Social App Node.js + Express/sequelize + MongoDB",
-    type: "backend",
-    img: Chewbooka,
+    title: "Enike",
+    tag: "Ecommece Web App ",
+    type: ["frontend", "backend"],
+    img: enike,
+    imgClass: "project-img-contain",
     techs: [
-      { name: "Node.js", icon: "/nodejs-2.svg" },
-      { name: "Express", icon: "/express-109.svg", class: "icon-express" },
-      { name: "MongoDB", icon: "/mongodb.svg" },
+      { name: "Next.js", icon: "/nextjs.svg" },
+      { name: "Tailwind CSS", icon: "/tailwind.svg" },
     ],
-    repo: "https://github.com/capimaker/Chewbooka_back",
+    demo: "Live Demo",
+    url: "https://enike-eta.vercel.app/",
+    repo: "https://github.com/capimaker/enike",
   },
   {
     title: "Nexus",

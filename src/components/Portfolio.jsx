@@ -8,7 +8,11 @@ export default function Portfolio() {
   const [filter, setFilter] = useState("all");
 
   const filteredProjects =
-    filter === "all" ? projects : projects.filter((p) => p.type === filter);
+    filter === "all"
+      ? projects
+      : projects.filter((p) =>
+          Array.isArray(p.type) ? p.type.includes(filter) : p.type === filter
+        );
 
   const tabs = [
     { id: "all", label: t("portfolio_tab_all") },
@@ -45,6 +49,7 @@ export default function Portfolio() {
                     {p.imgAvif && <source srcSet={p.imgAvif} type="image/avif" />}
                     {p.imgWebp && <source srcSet={p.imgWebp} type="image/webp" />}
                     <img
+                      className={`project-img ${p.imgClass || ""}`}
                       src={p.img || placeholderImg}
                       alt={p.title}
                       loading="lazy"
