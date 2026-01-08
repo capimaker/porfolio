@@ -69,13 +69,19 @@ export default function Portfolio() {
                   {Array.isArray(p.techs) && p.techs.length > 0 && (
                     <div className="proj-techs" aria-label={t("portfolio_tech_stack", { defaultValue: "Tech stack" })}>
                       {p.techs.map((tech, idx) => (
-                        <img
+                        <span
                           key={`${tech.name}-${idx}`}
-                          src={tech.icon}
-                          alt={tech.name}
-                          className={`tech-icon ${tech.class || ""}`}
-                          loading="lazy"
-                        />
+                          className="tech-wrap"
+                          data-name={tech.name}
+                          title={tech.name}
+                        >
+                          <img
+                            src={tech.icon}
+                            alt={tech.name}
+                            className={`tech-icon ${tech.class || ""}`}
+                            loading="lazy"
+                          />
+                        </span>
                       ))}
                     </div>
                   )}

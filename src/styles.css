@@ -773,6 +773,33 @@ background-clip: text; }
     flex-wrap:wrap;
     margin-bottom:4px;
   }
+.tech-wrap{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+  }
+.tech-wrap::after{
+    content: attr(data-name);
+    position:absolute;
+    bottom:100%;
+    left:50%;
+    transform:translate(-50%,-6px);
+    background:rgba(0,0,0,0.75);
+    color:#fff;
+    font-size:10px;
+    padding:2px 6px;
+    border-radius:6px;
+    white-space:nowrap;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .2s ease, transform .2s ease;
+    z-index:2;
+  }
+.tech-wrap:hover::after{
+    opacity:1;
+    transform:translate(-50%,-10px);
+  }
 .tech-icon{
     width:26px !important;
     height:26px !important;
