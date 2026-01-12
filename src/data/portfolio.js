@@ -125,7 +125,7 @@ export const projects = [
       { name: "Prisma", icon: "/prisma.svg" },
     ],
     demo: "Live Demo",
-    url: "",
+    url: "https://rviewer-hazel.vercel.app/",
     repo: "https://github.com/capimaker/rhviewer",
   },
   /*
