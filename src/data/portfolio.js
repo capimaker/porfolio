@@ -4,8 +4,7 @@ import patitappWebp from "../assets/patitapp.webp";
 import patitappAvif from "../assets/patitapp.avif";
 import patiback from "../assets/patiback.gif";
 
-import mentorshipWebp from "../assets/mentorship.webp";
-import mentorshipAvif from "../assets/mentorship.avif";
+
 import enike from "../assets/enike.webp";
 import nexusWebp from "../assets/nexusapp.webp";
 import nexusAvif from "../assets/nexusapp.avif";
