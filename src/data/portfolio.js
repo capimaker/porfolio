@@ -55,20 +55,24 @@ export const projects = [
       { name: "Node.js", icon: "/nodejs-2.svg" },
       { name: "PostgreSQL", icon: "/postgresql.svg" },
     ],
-    repo: "https://github.com/capimaker/nexusbk", // cambialo cuando tengas repo real de Nexus
+    repo: "https://github.com/capimaker/nexusbk", 
   },
   {
-    title: "Mentorship",
-    tag: "Dashboard React + Redux",
-    type: "frontend",
-    img: mentorshipWebp,
-    imgWebp: mentorshipWebp,
-    imgAvif: mentorshipAvif,
+    title: "RViewer",
+    tag: "Practice your Job Interviews with AI",
+    type: ["frontend", "backend"],
+    img: rviewer,
     techs: [
       { name: "React", icon: "/react-2.svg" },
-      { name: "Redux", icon: "/redux.svg" },
+      { name: "Next.js", icon: "/nextjs.svg" },
+      { name: "Tailwind CSS", icon: "/tailwind.svg" },
+      { name: "Neon", icon: "/neon.png" },
+      { name: "Stripe", icon: "/stripe.svg" },
+      { name: "Prisma", icon: "/prisma.svg" },
     ],
-    repo: "https://github.com/capimaker/startApp",
+    demo: "Live Demo",
+    url: "https://rviewer-hazel.vercel.app/",
+    repo: "https://github.com/capimaker/rhviewer",
   },
   {
     title: "PatitApp",
@@ -111,23 +115,7 @@ export const projects = [
     url: "https://capimaker.github.io/Arkascript/",
     repo: "https://github.com/capimaker/Arkascript",
   },
-   {
-    title: "RViewer",
-    tag: "Practice your Job Interviews with AI",
-    type: "frontend",
-    img: rviewer,
-    techs: [
-      { name: "React", icon: "/react-2.svg" },
-      { name: "Next.js", icon: "/nextjs.svg" },
-      { name: "Tailwind CSS", icon: "/tailwind.svg" },
-      { name: "Neon", icon: "/neon.png" },
-      { name: "Stripe", icon: "/stripe.svg" },
-      { name: "Prisma", icon: "/prisma.svg" },
-    ],
-    demo: "Live Demo",
-    url: "https://rviewer-hazel.vercel.app/",
-    repo: "https://github.com/capimaker/rhviewer",
-  },
+   
   /*
   {
     title: "Coming Soon",
