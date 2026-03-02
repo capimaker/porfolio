@@ -5,7 +5,7 @@
   "nav_portfolio": "Portfolio",
   "nav_contact": "Contact",
 
-  "hero_subtitle": "Full Stack Developer and Filmmaker",
+  "hero_subtitle": "Full Stack Developer",
   "hero_title": "Hi, I'm Carlos",
   "hero_desc": "My name is Carlos Ramos, but my friends call me Capi. I started programming with an IBM in school when I was 8 years old. Currently, I'm a trained Full Stack MERN developer.",
   "btn_projects": "View Projects",
@@ -105,7 +105,7 @@
       "years": "2008-2010"
     }
   ],
-  
+
   "contact_title": "Contact",
   "contact_sub": "Got an idea? Let's talk and launch it",
   "contact_name_label": "Your name",
