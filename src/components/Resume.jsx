@@ -11,9 +11,13 @@ export default function Resume() {
     const root = sectionRef.current;
     if (!root) return;
 
-    const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+    const reduce = window.matchMedia?.(
+      "(prefers-reduced-motion: reduce)",
+    )?.matches;
     if (reduce) {
-      root.querySelectorAll(".reveal-item").forEach((el) => el.classList.add("is-visible"));
+      root
+        .querySelectorAll(".reveal-item")
+        .forEach((el) => el.classList.add("is-visible"));
       return;
     }
 
@@ -26,7 +30,7 @@ export default function Resume() {
           }
         });
       },
-      { rootMargin: "0px 0px -10% 0px", threshold: 0.15 }
+      { rootMargin: "0px 0px -10% 0px", threshold: 0.15 },
     );
 
     root.querySelectorAll(".reveal-item").forEach((el) => obs.observe(el));
@@ -42,7 +46,8 @@ export default function Resume() {
   const renderContent = () => {
     switch (active) {
       case "biography": {
-        const items = t("resume_experience_items", { returnObjects: true }) || [];
+        const items =
+          t("resume_experience_items", { returnObjects: true }) || [];
         return (
           <div className="resume-section">
             <h3>{t("resume_experience_title")}</h3>
@@ -82,7 +87,11 @@ export default function Resume() {
                   className={`skill-card reveal-item ${skill.class || ""}`}
                   style={{ "--d": `${idx * 80}ms` }}
                 >
-                  <img src={skill.icon} alt={skill.name} className={skill.class || ""} />
+                  <img
+                    src={skill.icon}
+                    alt={skill.name}
+                    className={skill.class || ""}
+                  />
                   <p>{skill.name}</p>
                 </div>
               ))}
@@ -92,7 +101,8 @@ export default function Resume() {
       }
 
       case "education": {
-        const items = t("resume_education_items", { returnObjects: true }) || [];
+        const items =
+          t("resume_education_items", { returnObjects: true }) || [];
         return (
           <div className="resume-section">
             <h3>{t("resume_education_title")}</h3>
@@ -132,10 +142,20 @@ export default function Resume() {
         </div>
 
         <div className="resume-socials">
-          <a href="https://github.com/capimaker" target="_blank" rel="noreferrer" aria-label="GitHub">
+          <a
+            href="https://github.com/capimaker"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub"
+          >
             <img src="/github.svg" alt="GitHub" />
           </a>
-          <a href="https://www.linkedin.com/in/carlos_ramos7/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+          <a
+            href="https://www.linkedin.com/in/carlos-ramos7/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+          >
             <img src="/in.svg" alt="LinkedIn" />
           </a>
         </div>
