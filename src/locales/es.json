@@ -1,133 +1,169 @@
 {
-  "nav_home": "Inicio",
-  "nav_services": "Servicios",
-  "nav_resume": "Resumen",
-  "nav_portfolio": "Portafolio",
-  "nav_contact": "Contacto",
-
-  "hero_subtitle": "Desarrollador Full Stack",
-  "hero_title": "Hola, soy Carlos",
-  "hero_desc": "Me llamo Carlos Ramos pero mis amigos me llaman Capi. Empecé en la programación con un IBM en el colegio, tenía 8 años. Actualmente me he formado como desarrollador Full Stack MERN.",
-  "btn_projects": "Ver proyectos",
-  "btn_cv": "Descargar CV",
-
-  "services_title": "Lo que hago",
-  "services_items": [
-    {
-      "title": "Desarrollo Frontend",
-      "desc": "Construyo interfaces modernas y responsivas con React, CSS y animaciones fluidas."
-    },
-    {
-      "title": "Diseño UX/UI",
-      "desc": "Creo experiencias visuales limpias y atractivas, optimizadas para usuarios reales."
-    },
-    {
-      "title": "Backend y APIs",
-      "desc": "Desarrollo APIs REST seguras con Node.js, Express y bases de datos SQL/NoSQL."
+  "boot": {
+    "skip": "Haz clic para saltar"
+  },
+  "login": {
+    "name": "Carlos Ramos",
+    "role": "Desarrollador Full Stack",
+    "placeholder": "Pulsa Intro para entrar",
+    "enter": "Entrar"
+  },
+  "menu": {
+    "aboutPortfolio": "Acerca de este portfolio",
+    "sourceCode": "Código fuente en GitHub",
+    "restart": "Reiniciar",
+    "logout": "Cerrar sesión",
+    "appName": "Portfolio",
+    "file": "Archivo",
+    "edit": "Edición",
+    "view": "Visualización",
+    "go": "Ir",
+    "window": "Ventana",
+    "help": "Ayuda"
+  },
+  "apps": {
+    "projects": "Proyectos",
+    "about": "Sobre mí",
+    "terminal": "Terminal",
+    "cv": "CV.pdf",
+    "mail": "Contacto",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "trash": "Papelera"
+  },
+  "desktop": {
+    "projectsFolder": "Proyectos",
+    "cvFile": "CV Carlos Ramos.pdf",
+    "readme": "LEEME.txt"
+  },
+  "finder": {
+    "favorites": "Favoritos",
+    "all": "Todos",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "items": "elementos",
+    "techs": "Tecnologías",
+    "demo": "Ver demo",
+    "repo": "Ver código",
+    "back": "Atrás",
+    "empty": "No hay proyectos en esta carpeta"
+  },
+  "about": {
+    "greeting": "Hola, soy Carlos",
+    "role": "Desarrollador Full Stack",
+    "location": "Valencia, España",
+    "bio": "Me llamo Carlos Ramos pero mis amigos me llaman Capi. Empecé en la programación con un IBM en el colegio, tenía 8 años. Actualmente me he formado como desarrollador Full Stack MERN.",
+    "tabBio": "Qué hago",
+    "tabExperience": "Experiencia",
+    "tabEducation": "Educación",
+    "tabSkills": "Habilidades",
+    "downloadCv": "Descargar CV",
+    "services": [
+      {
+        "title": "Desarrollo Frontend",
+        "desc": "Construyo interfaces modernas y responsivas con React, CSS y animaciones fluidas."
+      },
+      {
+        "title": "Diseño UX/UI",
+        "desc": "Creo experiencias visuales limpias y atractivas, optimizadas para usuarios reales."
+      },
+      {
+        "title": "Backend y APIs",
+        "desc": "Desarrollo APIs REST seguras con Node.js, Express y bases de datos SQL/NoSQL."
+      }
+    ],
+    "experience": [
+      {
+        "title": "Desarrollador Full Stack Junior",
+        "company": "Valencia Innovation Capital",
+        "years": "2025",
+        "description": "Junto con mi equipo y Data Science, desarrollamos una plataforma con dashboard y agenda para startups de Valencia, mejorando la experiencia de usuario y reduciendo los tiempos de carga en un 30%."
+      },
+      {
+        "title": "Desarrollador Backend",
+        "company": "The Bridge",
+        "years": "2025",
+        "description": "Desarrollé un servidor Node.js + Express.js y gestioné bases de datos SQL, optimizando consultas y mejorando el rendimiento del sistema."
+      },
+      {
+        "title": "Desarrollador Junior",
+        "company": "Freelance",
+        "years": "2025",
+        "description": "Diseñé componentes UI en React y ayudé a corregir bugs para mejorar la estabilidad de la aplicación."
+      },
+      {
+        "title": "Administrador de sistemas",
+        "company": "Universidad Católica de Valencia",
+        "years": "2010",
+        "description": "Me encargué de dar soporte a los equipos de la universidad, así como reparar, actualizar y crear redes locales para los alumnos."
+      },
+      {
+        "title": "Administrador de sistemas",
+        "company": "Policía Local de Torrent",
+        "years": "2009",
+        "description": "Me encargué de dar soporte a los equipos de la policía, crearles un sistema de guardado en nube local y blindar los sistemas para evitar intrusiones."
+      }
+    ],
+    "education": [
+      {
+        "title": "Full Stack Web Development (MERN)",
+        "institution": "The Bridge",
+        "years": "2025"
+      },
+      {
+        "title": "Máster en Dirección Cinematográfica",
+        "institution": "ESCAC",
+        "years": "2018-2019"
+      },
+      {
+        "title": "Grado en Comunicación Audiovisual",
+        "institution": "CEU San Pablo",
+        "years": "2010-2015"
+      },
+      {
+        "title": "ASIR (Administración de Sistemas Informáticos en Red)",
+        "institution": "Florida Universitaria",
+        "years": "2008-2010"
+      }
+    ]
+  },
+  "mail": {
+    "title": "Nuevo mensaje",
+    "to": "Para",
+    "fromName": "Tu nombre",
+    "fromEmail": "Tu email",
+    "message": "Tu mensaje",
+    "send": "Enviar",
+    "sending": "Enviando...",
+    "sentOk": "Mensaje enviado. Gracias, te responderé pronto.",
+    "sentError": "No se pudo enviar el mensaje. Inténtalo de nuevo.",
+    "subtitle": "¿Tienes una idea? Hablemos y la lanzamos"
+  },
+  "cv": {
+    "download": "Descargar",
+    "openNew": "Abrir en pestaña nueva"
+  },
+  "terminal": {
+    "welcome": "Bienvenido a capiOS Terminal. Escribe 'help' para ver los comandos.",
+    "notFound": "comando no encontrado",
+    "helpIntro": "Comandos disponibles:",
+    "help": {
+      "help": "muestra esta ayuda",
+      "whoami": "quién soy",
+      "skills": "mis tecnologías",
+      "projects": "lista de proyectos",
+      "experience": "experiencia laboral",
+      "education": "formación",
+      "contact": "abre la app de contacto",
+      "cv": "abre mi CV",
+      "neofetch": "información del sistema",
+      "clear": "limpia la pantalla"
     }
-  ],
-
-  "resume_title": "Mi trayectoria",
-  "resume_tab_bio": "Experiencia",
-  "resume_tab_skills": "Habilidades",
-  "resume_tab_edu": "Educación",
-
-  "resume_experience_title": "Experiencia Laboral",
-  "resume_skills_title": "Habilidades Técnicas",
-  "resume_education_title": "Educación",
-
-  "resume_experience_items": [
-    {
-      "title": "Desarrollador Full-Stack Junior",
-      "company": "Valencia Innovation Capital",
-      "years": "2025",
-      "description": "Junto con mi equipo y Data Science, desarrollamos una plataforma con dashboard y agenda para startups de Valencia, mejorando la experiencia de usuario y reduciendo los tiempos de carga en un 30%."
-    },
-    {
-      "title": "Desarrollador Backend",
-      "company": "The Bridge",
-      "years": "2025",
-      "description": "Desarrollé un servidor Node.js + Express.js y gestioné bases de datos SQL, optimizando consultas y mejorando el rendimiento del sistema."
-    },
-    {
-      "title": "Desarrollador Junior",
-      "company": "Freelance",
-      "years": "2025",
-      "description": "Diseñé componentes UI en React y ayudé a corregir bugs para mejorar la estabilidad de la aplicación."
-    },
-    {
-      "title": "Administrador de sistemas",
-      "company": "Universidad Católica de Valencia",
-      "years": "2010",
-      "description": "Me encargué de dar soporte a los equipos de la universidad, así como reparar, actualizar y crear redes locales para los alumnos."
-    },
-    {
-      "title": "Administrador de sistemas",
-      "company": "Policía Local de Torrent",
-      "years": "2009",
-      "description": "Me encargué de dar soporte a los equipos de la policía, crearles un sistema de guardado en nube local y blindar los sistemas para evitar intrusiones."
-    }
-  ],
-
-  "resume_skills_items": [
-    { "name": "React", "icon": "/react-2.svg" },
-    { "name": "Node.js", "icon": "/nodejs-2.svg", "class": "icon-node" },
-    { "name": "MongoDB", "icon": "/mongodb.svg" },
-    { "name": "TypeScript", "icon": "/typescript-2.svg" },
-    { "name": "JavaScript", "icon": "/js.png" },
-    { "name": "HTML", "icon": "/html-1.svg" },
-    { "name": "CSS", "icon": "/css-3.svg" },
-    { "name": "MySQL", "icon": "/mysql-logo-pure.svg" },
-    { "name": "PostgreSQL", "icon": "/postgresql.svg" },
-    { "name": "Express", "icon": "/express-109.svg", "class": "icon-express" },
-    { "name": "Redux", "icon": "/redux.svg" }
-  ],
-
-  "resume_education_items": [
-    {
-      "title": "Full Stack Web Development (MERN)",
-      "institution": "The Bridge",
-      "years": "2025"
-    },
-    {
-      "title": "Máster en Dirección Cinematográfica",
-      "institution": "ESCAC",
-      "years": "2018-2019"
-    },
-    {
-      "title": "Grado en Comunicación Audiovisual",
-      "institution": "CEU San Pablo",
-      "years": "2010-2015"
-    },
-    {
-      "title": "ASIR (Administración de Sistemas Informáticos en Red)",
-      "institution": "Florida Universitaria",
-      "years": "2008-2010"
-    }
-  ],
-
-  "contact_title": "Contacto",
-  "contact_sub": "¿Tienes una idea? Hablemos y la lanzamos",
-  "contact_name_label": "Tu nombre",
-  "contact_email_label": "Tu email",
-  "contact_message_label": "Tu mensaje",
-  "contact_send": "Enviar mensaje",
-  "contact_sending": "Enviando...",
-  "contact_sent_ok": "Mensaje enviado. ¡Gracias!",
-  "contact_sent_error": "No se pudo enviar tu mensaje. Intenta de nuevo.",
-
-  "portfolio_title": "Mis proyectos",
-  "portfolio_desc": "Algunos de los proyectos que he desarrollado combinando creatividad y código.",
-  "portfolio_tab_all": "Todos",
-  "portfolio_tab_frontend": "Frontend",
-  "portfolio_tab_backend": "Backend",
-  "portfolio_btn_demo": "Demo",
-  "portfolio_btn_repo": "GitHub",
-  "portfolio_badge_demo": "Demo",
-  "portfolio_badge_repo": "Repo",
-  "portfolio_tech_stack": "Tecnologías",
-  "portfolio_empty": "No hay proyectos para mostrar por ahora.",
-
-  "footer_contact": "¿Trabajamos juntos?",
-  "footer_made": "Hecho con React + Vite"
+  },
+  "aboutDialog": {
+    "title": "Acerca de este portfolio",
+    "line1": "Escritorio inspirado en macOS Tahoe, construido con React, TypeScript, Tailwind CSS y Framer Motion.",
+    "line2": "El efecto de cristal es una aproximación web con backdrop-filter.",
+    "close": "Cerrar"
+  }
 }
