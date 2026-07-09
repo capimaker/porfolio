@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useWindows } from '../os/windowContext'
 import {
   Briefcase,
   Code,
@@ -33,9 +34,18 @@ interface EducationItem {
 
 const SERVICE_ICONS = [Code, PenNib, Database]
 
+const TAB_IDS: Tab[] = ['bio', 'experience', 'education', 'skills']
+
 export default function AboutApp() {
   const { t } = useTranslation()
+  const { windows } = useWindows()
   const [tab, setTab] = useState<Tab>('bio')
+
+  // Deep link from the File menu: openApp('about', 'skills' | 'experience' | ...)
+  const payload = windows.about.payload
+  useEffect(() => {
+    if (payload && TAB_IDS.includes(payload.value as Tab)) setTab(payload.value as Tab)
+  }, [payload])
 
   const services = t('about.services', { returnObjects: true }) as unknown as ServiceItem[]
   const experience = t('about.experience', { returnObjects: true }) as unknown as ExperienceItem[]

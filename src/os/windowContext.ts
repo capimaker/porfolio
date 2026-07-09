@@ -15,12 +15,14 @@ export interface WindowState {
   minimized: boolean
   maximized: boolean
   zIndex: number
+  /* Optional deep-link (e.g. About tab); n makes each openApp call distinct */
+  payload?: { value: string; n: number }
 }
 
 export interface WindowManagerValue {
   windows: Record<AppId, WindowState>
   focusedApp: AppId | null
-  openApp: (id: AppId) => void
+  openApp: (id: AppId, payload?: string) => void
   closeApp: (id: AppId) => void
   minimizeApp: (id: AppId) => void
   toggleMaximize: (id: AppId) => void

@@ -21,12 +21,18 @@ export function WindowProvider({ children }: { children: ReactNode }) {
     )
   }, [])
 
-  const openApp = useCallback((id: AppId) => {
+  const openApp = useCallback((id: AppId, payload?: string) => {
     zCounter.current += 1
     const z = zCounter.current
     setWindows((prev) => ({
       ...prev,
-      [id]: { ...prev[id], open: true, minimized: false, zIndex: z },
+      [id]: {
+        ...prev[id],
+        open: true,
+        minimized: false,
+        zIndex: z,
+        payload: payload !== undefined ? { value: payload, n: z } : prev[id].payload,
+      },
     }))
   }, [])
 

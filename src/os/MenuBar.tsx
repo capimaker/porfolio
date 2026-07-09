@@ -12,9 +12,10 @@ interface MenuBarProps {
 
 export default function MenuBar({ onRestart, onLogout }: MenuBarProps) {
   const { t, i18n } = useTranslation()
-  const { focusedApp } = useWindows()
+  const { focusedApp, openApp } = useWindows()
   const [now, setNow] = useState(() => new Date())
   const [menuOpen, setMenuOpen] = useState(false)
+  const [fileOpen, setFileOpen] = useState(false)
   const [aboutOpen, setAboutOpen] = useState(false)
 
   useEffect(() => {
@@ -40,9 +41,58 @@ export default function MenuBar({ onRestart, onLogout }: MenuBarProps) {
           >
             <AppleLogo size={16} weight="fill" />
           </button>
-          <span className="rounded-md px-2 py-0.5 font-bold">{appName}</span>
+          <button
+            onClick={() => openApp('projects')}
+            className="rounded-md px-2 py-0.5 font-bold transition-colors hover:bg-white/15"
+          >
+            {appName}
+          </button>
           <nav className="hidden items-center md:flex">
-            {(['file', 'edit', 'view', 'go', 'window', 'help'] as const).map((key) => (
+            <span className="relative">
+              <button
+                onClick={() => setFileOpen((v) => !v)}
+                className={`rounded-md px-2 py-0.5 transition-colors hover:bg-white/15 ${fileOpen ? 'bg-white/15' : ''}`}
+              >
+                {t('menu.file')}
+              </button>
+              <AnimatePresence>
+                {fileOpen && (
+                  <>
+                    <div className="fixed inset-0 z-[510]" onClick={() => setFileOpen(false)} />
+                    <motion.div
+                      initial={{ opacity: 0, y: -6 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -6 }}
+                      transition={{ duration: 0.15 }}
+                      className="glass absolute left-0 top-full z-[520] mt-1.5 w-56 rounded-xl p-1.5 text-[13px] font-normal"
+                    >
+                      {(
+                        [
+                          { label: t('about.tabSkills'), action: () => openApp('about', 'skills') },
+                          { label: t('about.tabExperience'), action: () => openApp('about', 'experience') },
+                          { label: t('about.tabEducation'), action: () => openApp('about', 'education') },
+                          { label: t('apps.projects'), action: () => openApp('projects') },
+                          { label: t('apps.cv'), action: () => openApp('cv') },
+                          { label: t('apps.about'), action: () => openApp('about', 'bio') },
+                        ] as const
+                      ).map((item) => (
+                        <button
+                          key={item.label}
+                          onClick={() => {
+                            item.action()
+                            setFileOpen(false)
+                          }}
+                          className="block w-full rounded-lg px-3 py-1.5 text-left hover:bg-blue-500/80"
+                        >
+                          {item.label}
+                        </button>
+                      ))}
+                    </motion.div>
+                  </>
+                )}
+              </AnimatePresence>
+            </span>
+            {(['edit', 'view', 'go', 'window', 'help'] as const).map((key) => (
               <span key={key} className="cursor-default rounded-md px-2 py-0.5 hover:bg-white/10">
                 {t(`menu.${key}`)}
               </span>

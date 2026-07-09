@@ -108,10 +108,12 @@ function DockIcon({
   entry,
   mouseX,
   magnify,
+  base,
 }: {
   entry: DockEntry
   mouseX: MotionValue<number>
   magnify: boolean
+  base: number
 }) {
   const { t } = useTranslation()
   const { windows, openApp } = useWindows()
@@ -123,7 +125,7 @@ function DockIcon({
     if (!bounds) return Infinity
     return val - bounds.x - bounds.width / 2
   })
-  const widthRaw = useTransform(distance, [-140, 0, 140], [BASE, magnify ? PEAK : BASE, BASE])
+  const widthRaw = useTransform(distance, [-140, 0, 140], [base, magnify ? PEAK : base, base])
   const width = useSpring(widthRaw, { mass: 0.1, stiffness: 180, damping: 14 })
 
   const isOpen = entry.appId ? windows[entry.appId].open : false
@@ -165,21 +167,22 @@ export default function Dock() {
   const isMobile = useIsMobile()
   const reduceMotion = useReducedMotion()
   const magnify = !isMobile && !reduceMotion
+  const base = isMobile ? 40 : BASE
 
   return (
     <div className="pointer-events-none absolute inset-x-0 bottom-2 z-[400] flex justify-center px-2">
       <motion.nav
         onMouseMove={(e) => magnify && mouseX.set(e.pageX)}
         onMouseLeave={() => mouseX.set(Infinity)}
-        className="glass pointer-events-auto flex items-end gap-2 rounded-[24px] px-3 pb-2.5 pt-2"
+        className="glass pointer-events-auto flex max-w-full items-end gap-1.5 rounded-2xl px-2 pb-2 pt-1.5 sm:gap-2 sm:rounded-[24px] sm:px-3 sm:pb-2.5 sm:pt-2"
         aria-label="Dock"
       >
         {DOCK_APPS.map((entry) => (
-          <DockIcon key={entry.key} entry={entry} mouseX={mouseX} magnify={magnify} />
+          <DockIcon key={entry.key} entry={entry} mouseX={mouseX} magnify={magnify} base={base} />
         ))}
-        <span className="mx-0.5 h-10 w-px self-center bg-white/25" />
+        <span className="mx-0.5 h-8 w-px self-center bg-white/25 sm:h-10" />
         {DOCK_LINKS.map((entry) => (
-          <DockIcon key={entry.key} entry={entry} mouseX={mouseX} magnify={magnify} />
+          <DockIcon key={entry.key} entry={entry} mouseX={mouseX} magnify={magnify} base={base} />
         ))}
         {!isMobile && (
           <>
@@ -196,6 +199,7 @@ export default function Dock() {
               }}
               mouseX={mouseX}
               magnify={magnify}
+              base={base}
             />
           </>
         )}
