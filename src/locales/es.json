@@ -18,8 +18,10 @@
     "edit": "Edición",
     "view": "Visualización",
     "go": "Ir",
-    "window": "Ventana",
-    "help": "Ayuda"
+    "help": "Ayuda",
+    "copyEmail": "Copiar email",
+    "copied": "Email copiado",
+    "mail": "Mail"
   },
   "apps": {
     "projects": "Proyectos",
@@ -165,5 +167,11 @@
     "line1": "Escritorio inspirado en macOS Tahoe, construido con React, TypeScript, Tailwind CSS y Framer Motion.",
     "line2": "El efecto de cristal es una aproximación web con backdrop-filter.",
     "close": "Cerrar"
+  },
+  "welcome": {
+    "title": "Gracias por usar capiOS",
+    "body": "Siéntete libre de navegar por toda mi web y curiosear cada rincón: abre las apps del Dock, trastea con la Terminal y, si te gusta lo que ves, escríbeme.",
+    "signature": "Carlos Ramos",
+    "cta": "Explorar"
   }
 }

@@ -23,7 +23,7 @@ export default function App() {
   }
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence>
       {phase === 'boot' && <BootScreen key="boot" onDone={() => setPhase('login')} />}
       {phase === 'login' && <LoginScreen key="login" onLogin={() => setPhase('desktop')} />}
       {phase === 'desktop' && (

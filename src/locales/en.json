@@ -18,8 +18,10 @@
     "edit": "Edit",
     "view": "View",
     "go": "Go",
-    "window": "Window",
-    "help": "Help"
+    "help": "Help",
+    "copyEmail": "Copy email",
+    "copied": "Email copied",
+    "mail": "Mail"
   },
   "apps": {
     "projects": "Projects",
@@ -165,5 +167,11 @@
     "line1": "A desktop inspired by macOS Tahoe, built with React, TypeScript, Tailwind CSS and Framer Motion.",
     "line2": "The glass effect is a web approximation using backdrop-filter.",
     "close": "Close"
+  },
+  "welcome": {
+    "title": "Thanks for using capiOS",
+    "body": "Feel free to explore my whole site and poke around every corner: open the apps in the Dock, play with the Terminal and, if you like what you see, drop me a line.",
+    "signature": "Carlos Ramos",
+    "cta": "Explore"
   }
 }

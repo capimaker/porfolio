@@ -24,7 +24,12 @@ export default function BootScreen({ onDone }: { onDone: () => void }) {
       else onDone()
     }
     raf = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(raf)
+    // rAF is paused in hidden tabs; make sure the boot still finishes there
+    const fallback = setTimeout(onDone, BOOT_MS + 500)
+    return () => {
+      cancelAnimationFrame(raf)
+      clearTimeout(fallback)
+    }
   }, [onDone, reduceMotion])
 
   return (
