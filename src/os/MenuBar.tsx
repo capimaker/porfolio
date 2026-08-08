@@ -17,6 +17,7 @@ type MenuId = 'apple' | 'file' | 'edit' | 'view' | 'go'
 interface MenuBarProps {
   onRestart: () => void
   onLogout: () => void
+  userName?: string
 }
 
 const ITEM_CLASS = 'flex w-full items-center gap-2 rounded-lg px-3 py-1.5 text-left hover:bg-blue-500/80'
@@ -50,7 +51,7 @@ function Dropdown({
   )
 }
 
-export default function MenuBar({ onRestart, onLogout }: MenuBarProps) {
+export default function MenuBar({ onRestart, onLogout, userName }: MenuBarProps) {
   const { t, i18n } = useTranslation()
   const { focusedApp, openApp } = useWindows()
   const [now, setNow] = useState(() => new Date())
@@ -150,6 +151,7 @@ export default function MenuBar({ onRestart, onLogout }: MenuBarProps) {
                     { label: t('about.tabEducation'), action: () => openApp('about', 'education') },
                     { label: t('apps.projects'), action: () => openApp('projects') },
                     { label: t('apps.cv'), action: () => openApp('cv') },
+                    { label: t('apps.reel'), action: () => openApp('reel') },
                     { label: t('apps.about'), action: () => openApp('about', 'bio') },
                   ] as const
                 ).map((item) => (
@@ -311,7 +313,9 @@ export default function MenuBar({ onRestart, onLogout }: MenuBarProps) {
                   alt={profile.name}
                   className="h-14 w-14 rounded-full object-cover ring-2 ring-white/30"
                 />
-                <h2 className="text-lg font-bold leading-snug">{t('welcome.title')}</h2>
+                <h2 className="text-lg font-bold leading-snug">
+                  {userName ? t('welcome.titleNamed', { name: userName }) : t('welcome.title')}
+                </h2>
               </div>
               <p className="mt-4 text-sm leading-relaxed text-white/80">{t('welcome.body')}</p>
               <p className="mt-3 text-right text-sm italic text-white/70">{t('welcome.signature')}</p>

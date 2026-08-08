@@ -12,6 +12,7 @@ type Phase = 'boot' | 'login' | 'desktop'
 export default function App() {
   const [phase, setPhase] = useState<Phase>('boot')
   const [session, setSession] = useState(0)
+  const [userName, setUserName] = useState('')
 
   const restart = () => {
     setSession((s) => s + 1)
@@ -25,7 +26,15 @@ export default function App() {
   return (
     <AnimatePresence>
       {phase === 'boot' && <BootScreen key="boot" onDone={() => setPhase('login')} />}
-      {phase === 'login' && <LoginScreen key="login" onLogin={() => setPhase('desktop')} />}
+      {phase === 'login' && (
+        <LoginScreen
+          key="login"
+          onLogin={(name) => {
+            setUserName(name)
+            setPhase('desktop')
+          }}
+        />
+      )}
       {phase === 'desktop' && (
         <motion.div
           key={`desktop-${session}`}
@@ -35,7 +44,7 @@ export default function App() {
           className="wallpaper flex h-full flex-col"
         >
           <WindowProvider>
-            <MenuBar onRestart={restart} onLogout={logout} />
+            <MenuBar onRestart={restart} onLogout={logout} userName={userName} />
             <Desktop />
             <Dock />
           </WindowProvider>

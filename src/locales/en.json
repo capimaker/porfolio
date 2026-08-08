@@ -5,7 +5,7 @@
   "login": {
     "name": "Carlos Ramos",
     "role": "Full Stack Developer",
-    "placeholder": "Press Enter to log in",
+    "placeholder": "Type your name and press Enter",
     "enter": "Log in"
   },
   "menu": {
@@ -31,7 +31,8 @@
     "mail": "Contact",
     "github": "GitHub",
     "linkedin": "LinkedIn",
-    "trash": "Trash"
+    "trash": "Trash",
+    "reel": "Reel"
   },
   "desktop": {
     "projectsFolder": "Projects",
@@ -172,6 +173,7 @@
     "title": "Thanks for using capiOS",
     "body": "Feel free to explore my whole site and poke around every corner: open the apps in the Dock, play with the Terminal and, if you like what you see, drop me a line.",
     "signature": "Carlos Ramos",
-    "cta": "Explore"
+    "cta": "Explore",
+    "titleNamed": "Hi {{name}}, thanks for using capiOS"
   }
 }

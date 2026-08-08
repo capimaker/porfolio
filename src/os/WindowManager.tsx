@@ -7,6 +7,7 @@ const createInitialWindows = (): Record<AppId, WindowState> => ({
   terminal: { open: false, minimized: false, maximized: false, zIndex: 0 },
   cv: { open: false, minimized: false, maximized: false, zIndex: 0 },
   mail: { open: false, minimized: false, maximized: false, zIndex: 0 },
+  reel: { open: false, minimized: false, maximized: false, zIndex: 0 },
 })
 
 export function WindowProvider({ children }: { children: ReactNode }) {

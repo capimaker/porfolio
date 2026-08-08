@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react'
 
-export type AppId = 'projects' | 'about' | 'terminal' | 'cv' | 'mail'
+export type AppId = 'projects' | 'about' | 'terminal' | 'cv' | 'mail' | 'reel'
 
 export const APP_META: Record<AppId, { titleKey: string; width: number; height: number }> = {
   projects: { titleKey: 'apps.projects', width: 880, height: 580 },
@@ -8,6 +8,7 @@ export const APP_META: Record<AppId, { titleKey: string; width: number; height: 
   terminal: { titleKey: 'apps.terminal', width: 660, height: 430 },
   cv: { titleKey: 'apps.cv', width: 740, height: 640 },
   mail: { titleKey: 'apps.mail', width: 620, height: 540 },
+  reel: { titleKey: 'apps.reel', width: 820, height: 520 },
 }
 
 export interface WindowState {
