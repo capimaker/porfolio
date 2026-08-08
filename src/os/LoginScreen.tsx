@@ -4,9 +4,10 @@ import { useTranslation } from 'react-i18next'
 import { ArrowRight, Globe } from '@phosphor-icons/react'
 import { profile } from '../data/portfolio'
 
-export default function LoginScreen({ onLogin }: { onLogin: () => void }) {
+export default function LoginScreen({ onLogin }: { onLogin: (name: string) => void }) {
   const { t, i18n } = useTranslation()
   const [now, setNow] = useState(() => new Date())
+  const [name, setName] = useState('')
 
   useEffect(() => {
     const timer = setInterval(() => setNow(new Date()), 15000)
@@ -45,7 +46,7 @@ export default function LoginScreen({ onLogin }: { onLogin: () => void }) {
       <form
         onSubmit={(e) => {
           e.preventDefault()
-          onLogin()
+          onLogin(name.trim().slice(0, 30))
         }}
         className="relative z-10 mt-auto mb-[12vh] flex flex-col items-center"
       >
@@ -58,8 +59,12 @@ export default function LoginScreen({ onLogin }: { onLogin: () => void }) {
         <p className="text-sm text-white/70">{t('login.role')}</p>
         <div className="mt-5 flex items-center gap-2">
           <input
-            type="password"
+            type="text"
             autoFocus
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            maxLength={30}
+            autoComplete="off"
             placeholder={t('login.placeholder')}
             aria-label={t('login.placeholder')}
             className="glass w-56 rounded-full px-4 py-2 text-center text-sm text-white placeholder-white/60 outline-none focus:ring-2 focus:ring-white/50"

@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import {
   EnvelopeSimple,
   FilePdf,
+  FilmSlate,
   Folder,
   GithubLogo,
   LinkedinLogo,
@@ -76,6 +77,16 @@ const DOCK_APPS: DockEntry[] = [
     tile: (
       <span className="flex h-full w-full items-center justify-center rounded-[22%] bg-gradient-to-b from-cyan-300 to-blue-500">
         <EnvelopeSimple size="55%" weight="fill" className="text-white drop-shadow" />
+      </span>
+    ),
+  },
+  {
+    key: 'reel',
+    labelKey: 'apps.reel',
+    appId: 'reel',
+    tile: (
+      <span className="flex h-full w-full items-center justify-center rounded-[22%] bg-gradient-to-b from-fuchsia-500 to-purple-800">
+        <FilmSlate size="55%" weight="fill" className="text-white drop-shadow" />
       </span>
     ),
   },
@@ -167,7 +178,7 @@ export default function Dock() {
   const isMobile = useIsMobile()
   const reduceMotion = useReducedMotion()
   const magnify = !isMobile && !reduceMotion
-  const base = isMobile ? 40 : BASE
+  const base = isMobile ? 36 : BASE
 
   return (
     <div className="pointer-events-none absolute inset-x-0 bottom-2 z-[400] flex justify-center px-2">
