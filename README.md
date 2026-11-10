@@ -8,7 +8,7 @@ My developer portfolio, built as an interactive desktop: windows you can drag, r
 - React 19 + TypeScript, built with Vite 7
 - Tailwind CSS 3 for styling, Framer Motion for animation
 - i18next for Spanish / English
-- EmailJS for the contact form
+- EmailJS for the contact form, called from a Vercel serverless function (`api/contact.ts`) so no keys reach the browser
 
 ## How it works
 ```
@@ -21,6 +21,8 @@ src/
     Dock.tsx, MenuBar.tsx, LoginScreen.tsx
   apps/              one component per app: Projects, About, Terminal, CV, Mail, Reel
   data/portfolio.ts  profile, projects and skills (single source of truth)
+api/
+  contact.ts         serverless function that sends the contact form via EmailJS
   locales/           es.json / en.json
 ```
 
@@ -32,7 +34,7 @@ src/
 ## Run it locally
 ```bash
 npm install
-cp .env.example .env   # add your EmailJS keys
+cp .env.example .env   # add your EmailJS keys (only needed for the contact form)
 npm run dev
 ```
 
@@ -44,12 +46,14 @@ npm run dev
 | `npm run lint` | ESLint |
 
 ## Environment variables
+Set these in Vercel (Project → Settings → Environment Variables) and in a local `.env`:
 ```
-VITE_EMAILJS_SERVICE_ID=
-VITE_EMAILJS_TEMPLATE_ID=
-VITE_EMAILJS_PUBLIC_KEY=
+EMAILJS_SERVICE_ID=
+EMAILJS_TEMPLATE_ID=
+EMAILJS_PUBLIC_KEY=
+EMAILJS_PRIVATE_KEY=
 ```
-These end up in the client bundle by design (EmailJS public key). Restrict allowed origins in the EmailJS dashboard.
+They are read only by `api/contact.ts` on the server. To test the contact form locally use `vercel dev` (plain `npm run dev` does not run the API).
 
 ## Contact
 carlosramos4dev@gmail.com · [GitHub](https://github.com/capimaker) · [LinkedIn](https://www.linkedin.com/in/carlos-ramos7/)
