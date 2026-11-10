@@ -3,8 +3,8 @@ import patitapp from "../assets/patitapp.webp";
 import patiback from "../assets/patiback.gif";
 import enike from "../assets/enike.webp";
 import nexus from "../assets/nexusapp.webp";
-import apple from "../assets/apple.svg";
-import rviewer from "../assets/rviewer.png";
+import apple from "../assets/apple.webp";
+import rviewer from "../assets/rviewer.webp";
 import avatar from "../assets/yo.webp";
 
 export const profile = {
@@ -31,22 +31,42 @@ export interface Project {
   techs: Tech[];
   url?: string;
   repo: string;
+  /** i18n key under projects.<id> with a short description */
+  hasDescription?: boolean;
 }
 
 export const projects: Project[] = [
   {
-    id: "apple-clone",
-    title: "Apple Clone",
-    tag: "Macbook Product Page Clone",
-    type: ["frontend"],
-    img: apple,
+    id: "rviewer",
+    title: "RViewer",
+    tag: "Practice your Job Interviews with AI",
+    hasDescription: true,
+    type: ["frontend", "backend"],
+    img: rviewer,
     techs: [
       { name: "React", icon: "/react-2.svg" },
-      { name: "Tailwind", icon: "/tailwind.svg" },
-      { name: "Three.js", icon: "/three.svg" },
+      { name: "Next.js", icon: "/nextjs.svg" },
+      { name: "Tailwind CSS", icon: "/tailwind.svg" },
+      { name: "Neon", icon: "/neon.png" },
+      { name: "Stripe", icon: "/stripe.svg" },
+      { name: "Prisma", icon: "/prisma.svg" },
     ],
-    url: "https://appleclone-sooty.vercel.app/",
-    repo: "https://github.com/capimaker/appleclone",
+    url: "https://rviewer-hazel.vercel.app/",
+    repo: "https://github.com/capimaker/rhviewer",
+  },
+  {
+    id: "nexus",
+    title: "Nexus",
+    tag: "TS + PostgreSQL + Node.js",
+    hasDescription: true,
+    type: ["backend"],
+    img: nexus,
+    techs: [
+      { name: "TypeScript", icon: "/typescript-2.svg" },
+      { name: "Node.js", icon: "/nodejs-2.svg" },
+      { name: "PostgreSQL", icon: "/postgresql.svg" },
+    ],
+    repo: "https://github.com/capimaker/nexusbk",
   },
   {
     id: "enike",
@@ -60,36 +80,6 @@ export const projects: Project[] = [
     ],
     url: "https://enike-eta.vercel.app/",
     repo: "https://github.com/capimaker/enike",
-  },
-  {
-    id: "nexus",
-    title: "Nexus",
-    tag: "TS + PostgreSQL + Node.js",
-    type: ["backend"],
-    img: nexus,
-    techs: [
-      { name: "TypeScript", icon: "/typescript-2.svg" },
-      { name: "Node.js", icon: "/nodejs-2.svg" },
-      { name: "PostgreSQL", icon: "/postgresql.svg" },
-    ],
-    repo: "https://github.com/capimaker/nexusbk",
-  },
-  {
-    id: "rviewer",
-    title: "RViewer",
-    tag: "Practice your Job Interviews with AI",
-    type: ["frontend", "backend"],
-    img: rviewer,
-    techs: [
-      { name: "React", icon: "/react-2.svg" },
-      { name: "Next.js", icon: "/nextjs.svg" },
-      { name: "Tailwind CSS", icon: "/tailwind.svg" },
-      { name: "Neon", icon: "/neon.png" },
-      { name: "Stripe", icon: "/stripe.svg" },
-      { name: "Prisma", icon: "/prisma.svg" },
-    ],
-    url: "https://rviewer-hazel.vercel.app/",
-    repo: "https://github.com/capimaker/rhviewer",
   },
   {
     id: "patitapp",
@@ -118,6 +108,20 @@ export const projects: Project[] = [
     repo: "https://github.com/capimaker/PatitasBackend",
   },
   {
+    id: "apple-clone",
+    title: "Apple Clone",
+    tag: "Macbook Product Page Clone",
+    type: ["frontend"],
+    img: apple,
+    techs: [
+      { name: "React", icon: "/react-2.svg" },
+      { name: "Tailwind", icon: "/tailwind.svg" },
+      { name: "Three.js", icon: "/three.svg" },
+    ],
+    url: "https://appleclone-sooty.vercel.app/",
+    repo: "https://github.com/capimaker/appleclone",
+  },
+  {
     id: "arkascript",
     title: "ArkaScript",
     tag: "JavaScript Vanilla Game",
@@ -130,15 +134,18 @@ export const projects: Project[] = [
 ];
 
 export const skills: Tech[] = [
-  { name: "React", icon: "/react-2.svg" },
-  { name: "Node.js", icon: "/nodejs-2.svg" },
-  { name: "MongoDB", icon: "/mongodb.svg" },
   { name: "TypeScript", icon: "/typescript-2.svg" },
   { name: "JavaScript", icon: "/js.png" },
+  { name: "React", icon: "/react-2.svg" },
+  { name: "Next.js", icon: "/nextjs.svg" },
+  { name: "Node.js", icon: "/nodejs-2.svg" },
+  { name: "Express", icon: "/express-109.svg" },
+  { name: "PostgreSQL", icon: "/postgresql.svg" },
+  { name: "MongoDB", icon: "/mongodb.svg" },
+  { name: "Prisma", icon: "/prisma.svg" },
+  { name: "Tailwind CSS", icon: "/tailwind.svg" },
+  { name: "Redux", icon: "/redux.svg" },
+  { name: "MySQL", icon: "/mysql-logo-pure.svg" },
   { name: "HTML", icon: "/html-1.svg" },
   { name: "CSS", icon: "/css-3.svg" },
-  { name: "MySQL", icon: "/mysql-logo-pure.svg" },
-  { name: "PostgreSQL", icon: "/postgresql.svg" },
-  { name: "Express", icon: "/express-109.svg" },
-  { name: "Redux", icon: "/redux.svg" },
 ];

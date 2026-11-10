@@ -105,10 +105,10 @@ export default function TerminalApp() {
         out.push(NEOFETCH_ART)
         out.push(`${profile.nick}@capiOS`)
         out.push('---------------')
-        out.push('OS:      capiOS 26 Tahoe (web)')
+        out.push('OS:      capiOS (web)')
         out.push('Host:    portfolio.carlosramos')
         out.push('Shell:   zsh 5.9')
-        out.push('Stack:   MERN + TypeScript')
+        out.push('Stack:   TypeScript · React · Next.js · Node.js · PostgreSQL')
         out.push(`GitHub:  ${profile.github}`)
         out.push(`Email:   ${profile.email}`)
         break

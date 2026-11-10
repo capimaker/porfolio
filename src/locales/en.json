@@ -1,12 +1,9 @@
 {
-  "boot": {
-    "skip": "Click to skip"
-  },
   "login": {
     "name": "Carlos Ramos",
     "role": "Full Stack Developer",
-    "placeholder": "Type your name and press Enter",
-    "enter": "Log in"
+    "placeholder": "Your name (optional)",
+    "enter": "Enter"
   },
   "menu": {
     "aboutPortfolio": "About this portfolio",
@@ -55,7 +52,7 @@
     "greeting": "Hi, I'm Carlos",
     "role": "Full Stack Developer",
     "location": "Valencia, Spain",
-    "bio": "My name is Carlos Ramos, but my friends call me Capi. I started programming with an IBM in school when I was 8 years old. Currently, I'm a trained Full Stack MERN developer.",
+    "bio": "I'm Carlos (Capi to my friends), a full stack developer based in Valencia. Before switching to code I spent 11+ years as a filmmaker and commercial director for clients like Apple, MSC Cruises and Snapchat, so I'm used to real clients, tight deadlines and work that has to ship. Today I build web and mobile products with TypeScript, React, Next.js, Node.js and PostgreSQL. Open to roles in Spain, remote, or relocation.",
     "tabBio": "What I do",
     "tabExperience": "Experience",
     "tabEducation": "Education",
@@ -63,36 +60,36 @@
     "downloadCv": "Download CV",
     "services": [
       {
-        "title": "Frontend Development",
-        "desc": "I build modern and responsive interfaces with React, CSS and smooth animations."
-      },
-      {
-        "title": "UX/UI Design",
-        "desc": "I design clean and engaging user experiences, optimized for real users."
+        "title": "Frontend",
+        "desc": "Interfaces in React and Next.js with TypeScript and Tailwind, responsive and fast."
       },
       {
         "title": "Backend & APIs",
-        "desc": "I develop secure REST APIs with Node.js, Express and SQL/NoSQL databases."
+        "desc": "REST APIs with Node.js and Express on PostgreSQL or MongoDB, using Prisma."
+      },
+      {
+        "title": "Mobile",
+        "desc": "Mobile apps with React Native, Expo and Supabase, shipped to TestFlight."
       }
     ],
     "experience": [
       {
-        "title": "Junior Full Stack Developer",
-        "company": "Valencia Innovation Capital",
-        "years": "2025",
-        "description": "Together with my team and Data Science, we developed a platform with a dashboard and calendar for startups in Valencia, improving UX and reducing load times by 30%."
+        "title": "Freelance Full Stack Developer",
+        "company": "NorthStar · client project",
+        "years": "2025 – now",
+        "description": "Sole developer of a mobile app for a client company, built with React Native, Expo and Supabase, with AI features on the Claude API. Currently in TestFlight beta."
       },
       {
-        "title": "Backend Developer",
-        "company": "The Bridge",
+        "title": "Final project with a real client",
+        "company": "Valencia Innovation Capital · The Bridge",
         "years": "2025",
-        "description": "Developed a Node.js + Express.js server and managed SQL databases, optimizing queries and system performance."
+        "description": "They ran everything on Notion, so our team built them a platform from scratch: a drag & drop dashboard with widgets for scheduling, calendar and a startup directory, developed together with the Data Science team. Finding information went from digging through Notion to one place."
       },
       {
-        "title": "Junior Developer",
-        "company": "Freelance",
-        "years": "2025",
-        "description": "I designed UI components in React and helped fix bugs to improve the application's stability."
+        "title": "Filmmaker & Commercial Director",
+        "company": "Freelance · Spain and US",
+        "years": "11+ years",
+        "description": "Directed commercials and films for clients such as Apple, MSC Cruises and Snapchat, from client brief to final delivery."
       },
       {
         "title": "Systems Administrator",
@@ -165,15 +162,20 @@
   },
   "aboutDialog": {
     "title": "About this portfolio",
-    "line1": "A desktop inspired by macOS Tahoe, built with React, TypeScript, Tailwind CSS and Framer Motion.",
+    "line1": "An interactive desktop built with React, TypeScript, Tailwind CSS and Framer Motion.",
     "line2": "The glass effect is a web approximation using backdrop-filter.",
     "close": "Close"
   },
   "welcome": {
-    "title": "Thanks for using capiOS",
-    "body": "Feel free to explore my whole site and poke around every corner: open the apps in the Dock, play with the Terminal and, if you like what you see, drop me a line.",
+    "title": "Welcome to capiOS",
+    "titleNamed": "Hi {{name}}, welcome to capiOS",
+    "body": "I'm a full stack developer (TypeScript, React, Node.js) who spent 11 years directing commercials before switching to code. Start with my projects, grab the CV, or try the Terminal if you're curious.",
     "signature": "Carlos Ramos",
-    "cta": "Explore",
-    "titleNamed": "Hi {{name}}, thanks for using capiOS"
+    "cta": "See projects",
+    "secondary": "Look around"
+  },
+  "projects": {
+    "rviewer": "SaaS to practise job interviews by voice with an AI interviewer. Auth with Clerk, payments with Stripe, voice with Vapi, data on Neon Postgres through Prisma. Built in about 6 weeks.",
+    "nexus": "REST API written in TypeScript on Node.js and PostgreSQL."
   }
 }

@@ -1,52 +1,55 @@
-# Carlos Ramos – Portfolio
+# capiOS · Carlos Ramos portfolio
 
-Personal portfolio built with React + Vite. It showcases selected frontend/back‑end projects, resume, services, and a contact form powered by EmailJS. The site supports Spanish/English, light/dark themes, and optimized media (AVIF/WebP fallbacks).
+Live: **https://carlosramos.app**
 
-## Tech stack
-- React 19 + Vite 7
-- i18next (ES/EN)
-- Framer Motion (animations)
+My developer portfolio, built as an interactive desktop: windows you can drag, resize and minimize, a Dock, a menu bar and a working Terminal. Projects, experience, CV and a contact form all live inside it as "apps".
+
+## Stack
+- React 19 + TypeScript, built with Vite 7
+- Tailwind CSS 3 for styling, Framer Motion for animation
+- i18next for Spanish / English
 - EmailJS for the contact form
-- CSS (custom, responsive), prefers-reduced-motion friendly
 
-## Quick start
+## How it works
+```
+src/
+  App.tsx            login → desktop flow
+  os/                the "operating system"
+    WindowManager.tsx  window state (open, minimized, maximized, z-order) via React context
+    Window.tsx         draggable / resizable window frame
+    Desktop.tsx        desktop icons + renders open windows (apps are lazy-loaded)
+    Dock.tsx, MenuBar.tsx, LoginScreen.tsx
+  apps/              one component per app: Projects, About, Terminal, CV, Mail, Reel
+  data/portfolio.ts  profile, projects and skills (single source of truth)
+  locales/           es.json / en.json
+```
+
+- **Window manager:** a context holds every window's state and z-index; focusing a window raises it.
+- **Terminal:** a small command parser (`help`, `whoami`, `skills`, `projects`, `experience`, `education`, `contact`, `open cv`, `neofetch`, `clear`) that reads the same data as the rest of the UI.
+- **Mobile:** windows open full screen and the Dock adapts.
+- **Accessibility:** respects `prefers-reduced-motion` and includes a `<noscript>` text version.
+
+## Run it locally
 ```bash
 npm install
+cp .env.example .env   # add your EmailJS keys
 npm run dev
 ```
-Open the URL printed by Vite (default `http://localhost:5173`).
 
-## Scripts
-- `npm run dev` – start dev server
-- `npm run build` – production build
-- `npm run preview` – preview the build
-- `npm run lint` – ESLint check
+| Script | |
+|---|---|
+| `npm run dev` | dev server |
+| `npm run build` | production build to `dist/` |
+| `npm run preview` | preview the build |
+| `npm run lint` | ESLint |
 
 ## Environment variables
-Create `.env` with your EmailJS keys:
 ```
-VITE_EMAILJS_SERVICE_ID=your_service_id
-VITE_EMAILJS_TEMPLATE_ID=your_template_id
-VITE_EMAILJS_PUBLIC_KEY=your_public_key
+VITE_EMAILJS_SERVICE_ID=
+VITE_EMAILJS_TEMPLATE_ID=
+VITE_EMAILJS_PUBLIC_KEY=
 ```
+These end up in the client bundle by design (EmailJS public key). Restrict allowed origins in the EmailJS dashboard.
 
-## Structure (high level)
-- `src/components` – UI sections (Hero, Resume, Services, Portfolio, Contact, Navbar, Footer, etc.)
-- `src/data/portfolio.js` – project cards (includes AVIF/WebP fallbacks)
-- `src/locales/{es,en}.json` – translations
-- `src/assets` – images (prefer `.avif`/`.webp`; PNG/GIF only as fallback)
-- `src/styles.css` – global styles, layout, responsive rules
-
-## Assets & performance
-- Images are provided in AVIF/WebP with PNG fallback when needed; portfolio cards use `<picture>` for best format selection.
-- Parallax/background respects `prefers-reduced-motion`.
-- Lazy loading on gallery images to reduce initial payload.
-
-## Accessibility & UX
-- Keyboard/focusable controls, ARIA labels on buttons/links.
-- Theme toggle and language switch close the mobile menu and lock body scroll when open.
-- Contact form includes a honeypot and live status messages.
-
-## Deployment notes
-- Static build via `npm run build` outputs to `dist/`.
-- Set correct `og:image` in `index.html` if you host under a custom domain and want rich previews.
+## Contact
+carlosramos4dev@gmail.com · [GitHub](https://github.com/capimaker) · [LinkedIn](https://www.linkedin.com/in/carlos-ramos7/)
