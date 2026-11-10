@@ -67,14 +67,15 @@ export default function LoginScreen({ onLogin }: { onLogin: (name: string) => vo
             autoComplete="off"
             placeholder={t('login.placeholder')}
             aria-label={t('login.placeholder')}
-            className="glass w-56 rounded-full px-4 py-2 text-center text-sm text-white placeholder-white/60 outline-none focus:ring-2 focus:ring-white/50"
+            className="glass w-52 rounded-full px-4 py-2 text-center text-sm text-white placeholder-white/60 outline-none focus:ring-2 focus:ring-white/50"
           />
           <button
             type="submit"
             aria-label={t('login.enter')}
-            className="glass flex h-9 w-9 items-center justify-center rounded-full text-white transition-transform active:scale-90"
+            className="flex h-9 items-center gap-1.5 rounded-full bg-blue-500 px-4 text-[13px] font-semibold text-white transition-transform active:scale-95"
           >
-            <ArrowRight size={16} weight="bold" />
+            {t('login.enter')}
+            <ArrowRight size={14} weight="bold" />
           </button>
         </div>
       </form>

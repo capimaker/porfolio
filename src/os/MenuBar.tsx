@@ -2,7 +2,6 @@ import { useEffect, useState, type ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
 import { AnimatePresence, motion } from 'framer-motion'
 import {
-  AppleLogo,
   ArrowSquareOut,
   BatteryFull,
   Check,
@@ -11,6 +10,7 @@ import {
 } from '@phosphor-icons/react'
 import { APP_META, useWindows } from './windowContext'
 import { profile } from '../data/portfolio'
+import CapiMark from './CapiMark'
 
 type MenuId = 'apple' | 'file' | 'edit' | 'view' | 'go'
 
@@ -104,7 +104,7 @@ export default function MenuBar({ onRestart, onLogout, userName }: MenuBarProps)
           {/* Apple menu */}
           <span className="relative">
             <button onClick={() => toggle('apple')} className={menuButtonClass('apple')} aria-label="Menu">
-              <AppleLogo size={16} weight="fill" />
+              <CapiMark size={15} />
             </button>
             <Dropdown open={openMenu === 'apple'} onClose={close}>
               <button
@@ -319,9 +319,19 @@ export default function MenuBar({ onRestart, onLogout, userName }: MenuBarProps)
               </div>
               <p className="mt-4 text-sm leading-relaxed text-white/80">{t('welcome.body')}</p>
               <p className="mt-3 text-right text-sm italic text-white/70">{t('welcome.signature')}</p>
-              <div className="mt-5 flex justify-end">
+              <div className="mt-5 flex justify-end gap-2">
                 <button
                   onClick={() => setWelcomeOpen(false)}
+                  className="rounded-full bg-white/15 px-5 py-2 text-[13px] font-semibold text-white transition-colors hover:bg-white/25"
+                >
+                  {t('welcome.secondary')}
+                </button>
+                <button
+                  autoFocus
+                  onClick={() => {
+                    setWelcomeOpen(false)
+                    openApp('projects')
+                  }}
                   className="rounded-full bg-blue-500 px-6 py-2 text-[13px] font-semibold text-white transition-transform active:scale-[0.97]"
                 >
                   {t('welcome.cta')}

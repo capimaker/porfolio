@@ -1,23 +1,19 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import BootScreen from './os/BootScreen'
 import LoginScreen from './os/LoginScreen'
 import MenuBar from './os/MenuBar'
 import Desktop from './os/Desktop'
 import Dock from './os/Dock'
 import { WindowProvider } from './os/WindowManager'
 
-type Phase = 'boot' | 'login' | 'desktop'
+type Phase = 'login' | 'desktop'
 
 export default function App() {
-  const [phase, setPhase] = useState<Phase>('boot')
+  const [phase, setPhase] = useState<Phase>('login')
   const [session, setSession] = useState(0)
   const [userName, setUserName] = useState('')
 
-  const restart = () => {
-    setSession((s) => s + 1)
-    setPhase('boot')
-  }
+  // "Restart" and "Log out" both return to the login screen
   const logout = () => {
     setSession((s) => s + 1)
     setPhase('login')
@@ -25,7 +21,6 @@ export default function App() {
 
   return (
     <AnimatePresence>
-      {phase === 'boot' && <BootScreen key="boot" onDone={() => setPhase('login')} />}
       {phase === 'login' && (
         <LoginScreen
           key="login"
@@ -44,7 +39,7 @@ export default function App() {
           className="wallpaper flex h-full flex-col"
         >
           <WindowProvider>
-            <MenuBar onRestart={restart} onLogout={logout} userName={userName} />
+            <MenuBar onRestart={logout} onLogout={logout} userName={userName} />
             <Desktop />
             <Dock />
           </WindowProvider>

@@ -122,6 +122,11 @@ function ProjectDetail({ project, onBack }: { project: Project; onBack: () => vo
         <div>
           <h2 className="text-xl font-bold">{project.title}</h2>
           <p className="text-sm text-white/60">{project.tag}</p>
+          {project.hasDescription && (
+            <p className="mt-2 max-w-[65ch] text-[13px] leading-relaxed text-white/75">
+              {t(`projects.${project.id}`)}
+            </p>
+          )}
         </div>
         <div className="flex gap-2">
           {project.url && (

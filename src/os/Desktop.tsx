@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { lazy, Suspense, useRef } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { FilePdf, FileText, Folder } from '@phosphor-icons/react'
@@ -6,12 +6,14 @@ import Window from './Window'
 import DesktopIcon from './DesktopIcon'
 import { APP_META, useWindows, type AppId } from './windowContext'
 import { useIsMobile } from './useIsMobile'
-import ProjectsApp from '../apps/ProjectsApp'
-import AboutApp from '../apps/AboutApp'
-import TerminalApp from '../apps/TerminalApp'
-import CVApp from '../apps/CVApp'
-import MailApp from '../apps/MailApp'
-import ReelApp from '../apps/ReelApp'
+
+// Each app is its own chunk, loaded the first time its window opens
+const ProjectsApp = lazy(() => import('../apps/ProjectsApp'))
+const AboutApp = lazy(() => import('../apps/AboutApp'))
+const TerminalApp = lazy(() => import('../apps/TerminalApp'))
+const CVApp = lazy(() => import('../apps/CVApp'))
+const MailApp = lazy(() => import('../apps/MailApp'))
+const ReelApp = lazy(() => import('../apps/ReelApp'))
 
 const APP_CONTENT: Record<AppId, React.ReactNode> = {
   projects: <ProjectsApp />,
@@ -59,8 +61,13 @@ export default function Desktop() {
           const areaH = areaRef.current?.clientHeight ?? window.innerHeight - 110
           const width = Math.min(meta.width, areaW - 24)
           const height = Math.min(meta.height, areaH - 24)
-          const x = isMobile ? 0 : Math.max(12, (areaW - width) / 2 + (index - 2) * 44)
-          const y = isMobile ? 0 : Math.max(8, (areaH - height) / 2 + (index - 2) * 24 - 20)
+          // Cascade windows a bit, but never past the right/bottom edge
+          const x = isMobile
+            ? 0
+            : Math.min(Math.max(12, (areaW - width) / 2 + (index - 2) * 44), Math.max(12, areaW - width - 12))
+          const y = isMobile
+            ? 0
+            : Math.min(Math.max(8, (areaH - height) / 2 + (index - 2) * 24 - 20), Math.max(8, areaH - height - 8))
           return (
             <Window
               key={id}
@@ -72,7 +79,7 @@ export default function Desktop() {
               initialHeight={height}
               dragArea={areaRef}
             >
-              {APP_CONTENT[id]}
+              <Suspense fallback={null}>{APP_CONTENT[id]}</Suspense>
             </Window>
           )
         })}
