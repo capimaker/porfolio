@@ -1,14 +1,9 @@
 import { useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import emailjs from '@emailjs/browser'
 import { CheckCircle, PaperPlaneTilt, WarningCircle } from '@phosphor-icons/react'
 import { profile } from '../data/portfolio'
 
 type Status = 'idle' | 'sending' | 'ok' | 'error'
-
-const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
-const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
-const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
 export default function MailApp() {
   const { t } = useTranslation()
@@ -20,7 +15,13 @@ export default function MailApp() {
     if (!formRef.current || status === 'sending') return
     setStatus('sending')
     try {
-      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, { publicKey: PUBLIC_KEY })
+      // Sent through our own serverless function (api/contact.ts), which holds the EmailJS keys
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(formRef.current))),
+      })
+      if (!res.ok) throw new Error(`Contact API responded ${res.status}`)
       formRef.current.reset()
       setStatus('ok')
     } catch (err) {
