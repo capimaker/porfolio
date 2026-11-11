@@ -48,7 +48,7 @@ export default function LoginScreen({ onLogin }: { onLogin: (name: string) => vo
           e.preventDefault()
           onLogin(name.trim().slice(0, 30))
         }}
-        className="relative z-10 mt-auto mb-[12vh] flex flex-col items-center"
+        className="relative z-10 flex flex-1 flex-col items-center justify-center pb-[6vh]"
       >
         <img
           src={profile.avatar}
@@ -57,7 +57,7 @@ export default function LoginScreen({ onLogin }: { onLogin: (name: string) => vo
         />
         <h1 className="mt-4 text-xl font-semibold text-white">{t('login.name')}</h1>
         <p className="text-sm text-white/70">{t('login.role')}</p>
-        <div className="mt-5 flex items-center gap-2">
+        <div className="relative mt-5">
           <input
             type="text"
             autoFocus
@@ -67,14 +67,14 @@ export default function LoginScreen({ onLogin }: { onLogin: (name: string) => vo
             autoComplete="off"
             placeholder={t('login.placeholder')}
             aria-label={t('login.placeholder')}
-            className="glass w-52 rounded-full px-4 py-2 text-center text-sm text-white placeholder-white/60 outline-none focus:ring-2 focus:ring-white/50"
+            className="glass w-72 max-w-[80vw] rounded-full px-11 py-2.5 text-center text-sm text-white placeholder-white/60 outline-none focus:ring-2 focus:ring-white/50"
           />
           <button
             type="submit"
             aria-label={t('login.enter')}
-            className="flex h-9 items-center gap-1.5 rounded-full bg-blue-500 px-4 text-[13px] font-semibold text-white transition-transform active:scale-95"
+            title={t('login.enter')}
+            className="absolute right-1.5 top-1/2 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full bg-blue-500 text-white transition-transform active:scale-90"
           >
-            {t('login.enter')}
             <ArrowRight size={14} weight="bold" />
           </button>
         </div>
