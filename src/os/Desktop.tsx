@@ -13,7 +13,6 @@ const AboutApp = lazy(() => import('../apps/AboutApp'))
 const TerminalApp = lazy(() => import('../apps/TerminalApp'))
 const CVApp = lazy(() => import('../apps/CVApp'))
 const MailApp = lazy(() => import('../apps/MailApp'))
-const ReelApp = lazy(() => import('../apps/ReelApp'))
 
 const APP_CONTENT: Record<AppId, React.ReactNode> = {
   projects: <ProjectsApp />,
@@ -21,10 +20,9 @@ const APP_CONTENT: Record<AppId, React.ReactNode> = {
   terminal: <TerminalApp />,
   cv: <CVApp />,
   mail: <MailApp />,
-  reel: <ReelApp />,
 }
 
-const APP_ORDER: AppId[] = ['projects', 'about', 'terminal', 'cv', 'mail', 'reel']
+const APP_ORDER: AppId[] = ['projects', 'about', 'terminal', 'cv', 'mail']
 
 export default function Desktop() {
   const { t } = useTranslation()

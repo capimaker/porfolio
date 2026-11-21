@@ -13,8 +13,18 @@ export const profile = {
   email: "carlosramos4dev@gmail.com",
   github: "https://github.com/capimaker",
   linkedin: "https://www.linkedin.com/in/carlos-ramos7/",
-  cvUrl: "/Carlos_Ramoscv.pdf",
 };
+
+const CV_FILES = {
+  es: "CarlosRamos_CV_ES.pdf",
+  en: "Carlos_Ramoscv.pdf",
+};
+
+/** CV matching the UI language: Spanish for "es", English for everything else */
+export function cvFor(lang: string) {
+  const file = lang.startsWith("es") ? CV_FILES.es : CV_FILES.en;
+  return { url: `/${file}`, file };
+}
 
 export interface Tech {
   name: string;

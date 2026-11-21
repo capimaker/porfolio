@@ -151,7 +151,6 @@ export default function MenuBar({ onRestart, onLogout, userName }: MenuBarProps)
                     { label: t('about.tabEducation'), action: () => openApp('about', 'education') },
                     { label: t('apps.projects'), action: () => openApp('projects') },
                     { label: t('apps.cv'), action: () => openApp('cv') },
-                    { label: t('apps.reel'), action: () => openApp('reel') },
                     { label: t('apps.about'), action: () => openApp('about', 'bio') },
                   ] as const
                 ).map((item) => (
