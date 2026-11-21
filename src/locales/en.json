@@ -28,8 +28,7 @@
     "mail": "Contact",
     "github": "GitHub",
     "linkedin": "LinkedIn",
-    "trash": "Trash",
-    "reel": "Reel"
+    "trash": "Trash"
   },
   "desktop": {
     "projectsFolder": "Projects",
@@ -175,7 +174,11 @@
     "secondary": "Look around"
   },
   "projects": {
-    "rviewer": "SaaS to practise job interviews by voice with an AI interviewer. Auth with Clerk, payments with Stripe, voice with Vapi, data on Neon Postgres through Prisma. Built in about 6 weeks.",
-    "nexus": "REST API written in TypeScript on Node.js and PostgreSQL."
+    "rviewer": "SaaS to practise job interviews by voice with an AI interviewer. Auth with Clerk, payments with Stripe, voice with Vapi, data on Neon Postgres through Prisma.",
+    "nexus": "REST API for a gaming social network, written in TypeScript with Express 5 and PostgreSQL (Sequelize). JWT and bcrypt auth, Zod validation, Helmet and rate limiting for security, image uploads to Cloudinary, Pino logging and Swagger docs.",
+    "patitapp": "Social network for pets where users post, like, comment and follow each other. React frontend with Redux Toolkit for state, React Router with protected routes and Ant Design, connected to its own API.",
+    "patitapp-api": "PatitApp backend with Node.js, Express and MongoDB (Mongoose), following the MVC pattern. Sign-up with email confirmation (Nodemailer), JWT login, bcrypt-hashed passwords and image uploads with Multer.",
+    "apple-clone": "Recreation of Apple's MacBook Pro product page with a 3D model you can rotate, recolor and resize. React with Three.js (React Three Fiber), GSAP scroll animations and global state with Zustand.",
+    "arkascript": "Breakout-style game in plain JavaScript on HTML5 Canvas, no libraries. Keyboard controls, paddle bounce based on the hit point, and continuous collision detection so the ball never tunnels through bricks at high speed."
   }
 }

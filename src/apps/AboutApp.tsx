@@ -12,7 +12,7 @@ import {
   MapPin,
   PenNib,
 } from '@phosphor-icons/react'
-import { profile, skills } from '../data/portfolio'
+import { cvFor, profile, skills } from '../data/portfolio'
 
 type Tab = 'bio' | 'experience' | 'education' | 'skills'
 
@@ -37,7 +37,8 @@ const SERVICE_ICONS = [Code, PenNib, Database]
 const TAB_IDS: Tab[] = ['bio', 'experience', 'education', 'skills']
 
 export default function AboutApp() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const cv = cvFor(i18n.language)
   const { windows } = useWindows()
   const [tab, setTab] = useState<Tab>('bio')
 
@@ -77,8 +78,8 @@ export default function AboutApp() {
         </div>
         <div className="flex flex-wrap gap-2">
           <a
-            href={profile.cvUrl}
-            download="Carlos_Ramoscv.pdf"
+            href={cv.url}
+            download={cv.file}
             className="flex items-center gap-1.5 rounded-full bg-blue-500 px-4 py-1.5 text-[13px] font-semibold text-white transition-transform active:scale-95"
           >
             <DownloadSimple size={14} weight="bold" />
