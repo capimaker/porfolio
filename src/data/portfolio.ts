@@ -34,7 +34,6 @@ export interface Tech {
 export interface Project {
   id: string;
   title: string;
-  tag: string;
   type: ("frontend" | "backend")[];
   img: string;
   techs: Tech[];
@@ -46,7 +45,6 @@ export const projects: Project[] = [
   {
     id: "rviewer",
     title: "RViewer",
-    tag: "Practice your Job Interviews with AI",
     type: ["frontend", "backend"],
     img: rviewer,
     techs: [
@@ -63,7 +61,6 @@ export const projects: Project[] = [
   {
     id: "nexus",
     title: "Nexus",
-    tag: "TS + PostgreSQL + Node.js",
     type: ["backend"],
     img: nexus,
     techs: [
@@ -76,7 +73,6 @@ export const projects: Project[] = [
   {
     id: "patitapp",
     title: "PatitApp",
-    tag: "Social Web App React",
     type: ["frontend"],
     img: patitapp,
     techs: [
@@ -90,7 +86,6 @@ export const projects: Project[] = [
   {
     id: "patitapp-api",
     title: "PatitApp API",
-    tag: "Node.js + Express + MongoDB",
     type: ["backend"],
     img: patiback,
     techs: [
@@ -103,7 +98,6 @@ export const projects: Project[] = [
   {
     id: "apple-clone",
     title: "Apple Clone",
-    tag: "Macbook Product Page Clone",
     type: ["frontend"],
     img: apple,
     techs: [
@@ -117,7 +111,6 @@ export const projects: Project[] = [
   {
     id: "arkascript",
     title: "ArkaScript",
-    tag: "JavaScript Vanilla Game",
     type: ["frontend"],
     img: arka,
     techs: [

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { CheckCircle, PaperPlaneTilt, WarningCircle } from '@phosphor-icons/react'
 import { profile } from '../data/portfolio'
 
-type Status = 'idle' | 'sending' | 'ok' | 'error'
+type Status = 'idle' | 'sending' | 'ok' | 'error' | 'limited'
 
 export default function MailApp() {
   const { t } = useTranslation()
@@ -21,6 +21,10 @@ export default function MailApp() {
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(Object.fromEntries(new FormData(formRef.current))),
       })
+      if (res.status === 429) {
+        setStatus('limited')
+        return
+      }
       if (!res.ok) throw new Error(`Contact API responded ${res.status}`)
       formRef.current.reset()
       setStatus('ok')
@@ -88,10 +92,10 @@ export default function MailApp() {
           {t('mail.sentOk')}
         </p>
       )}
-      {status === 'error' && (
+      {(status === 'error' || status === 'limited') && (
         <p className="flex items-center gap-1.5 border-t border-white/10 px-4 py-2 text-[13px] text-red-300">
           <WarningCircle size={15} weight="fill" />
-          {t('mail.sentError')}
+          {status === 'limited' ? t('mail.tooMany') : t('mail.sentError')}
         </p>
       )}
     </form>

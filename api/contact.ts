@@ -7,11 +7,43 @@ declare const process: { env: Record<string, string | undefined> }
 const EMAILJS_URL = 'https://api.emailjs.com/api/v1.0/email/send'
 const MAX = { from_name: 100, reply_to: 200, message: 5000 }
 
+// In-memory limits: they live as long as the function instance stays warm, so
+// they slow down spam bursts but are not a hard guarantee across instances.
+const PER_IP = { max: 3, windowMs: 10 * 60 * 1000 }
+const GLOBAL = { max: 20, windowMs: 60 * 60 * 1000 }
+const sentByIp = new Map<string, number[]>()
+let sentGlobal: number[] = []
+
 function json(status: number, body: unknown) {
   return new Response(JSON.stringify(body), {
     status,
     headers: { 'content-type': 'application/json' },
   })
+}
+
+function clientIp(request: Request) {
+  return (
+    request.headers.get('x-forwarded-for')?.split(',')[0].trim() ||
+    request.headers.get('x-real-ip') ||
+    'unknown'
+  )
+}
+
+/** Returns true and records the send if both limits allow it. */
+function allowSend(ip: string, now = Date.now()) {
+  sentGlobal = sentGlobal.filter((t) => now - t < GLOBAL.windowMs)
+  const recent = (sentByIp.get(ip) ?? []).filter((t) => now - t < PER_IP.windowMs)
+  if (recent.length >= PER_IP.max || sentGlobal.length >= GLOBAL.max) {
+    sentByIp.set(ip, recent)
+    return false
+  }
+  recent.push(now)
+  sentByIp.set(ip, recent)
+  sentGlobal.push(now)
+  for (const [key, times] of sentByIp) {
+    if (times.every((t) => now - t >= PER_IP.windowMs)) sentByIp.delete(key)
+  }
+  return true
 }
 
 export async function POST(request: Request) {
@@ -46,6 +78,10 @@ export async function POST(request: Request) {
     message.length > MAX.message
   ) {
     return json(400, { error: 'Fields too long' })
+  }
+
+  if (!allowSend(clientIp(request))) {
+    return json(429, { error: 'Too many messages, try again later' })
   }
 
   const res = await fetch(EMAILJS_URL, {

@@ -8,7 +8,7 @@ My developer portfolio, built as an interactive desktop: windows you can drag, r
 - React 19 + TypeScript, built with Vite 7
 - Tailwind CSS 3 for styling, Framer Motion for animation
 - i18next for Spanish / English
-- EmailJS for the contact form, called from a Vercel serverless function (`api/contact.ts`) so no keys reach the browser
+- EmailJS for the contact form, called from a Vercel serverless function (`api/contact.ts`) so no keys reach the browser, with per-IP and global rate limiting against spam
 
 ## How it works
 ```
@@ -19,16 +19,17 @@ src/
     Window.tsx         draggable / resizable window frame
     Desktop.tsx        desktop icons + renders open windows (apps are lazy-loaded)
     Dock.tsx, MenuBar.tsx, LoginScreen.tsx
-  apps/              one component per app: Projects, About, Terminal, CV, Mail, Reel
-  data/portfolio.ts  profile, projects and skills (single source of truth)
+  apps/              one component per app: Projects, About, Terminal, CV, Mail
+  data/portfolio.ts  profile, projects, skills and CV files (single source of truth)
+  locales/           es.json / en.json (all UI text)
 api/
-  contact.ts         serverless function that sends the contact form via EmailJS
-  locales/           es.json / en.json
+  contact.ts         serverless function that validates the contact form and sends it via EmailJS
 ```
 
 - **Window manager:** a context holds every window's state and z-index; focusing a window raises it.
 - **Terminal:** a small command parser (`help`, `whoami`, `skills`, `projects`, `experience`, `education`, `contact`, `open cv`, `neofetch`, `clear`) that reads the same data as the rest of the UI.
 - **Mobile:** windows open full screen and the Dock adapts.
+- **Language:** Spanish or English from the browser setting, switchable from the menu bar; the CV shown and downloaded follows the language.
 - **Accessibility:** respects `prefers-reduced-motion` and includes a `<noscript>` text version.
 
 ## Run it locally
@@ -41,7 +42,8 @@ npm run dev
 | Script | |
 |---|---|
 | `npm run dev` | dev server |
-| `npm run build` | production build to `dist/` |
+| `npm run build` | type-check, then production build to `dist/` |
+| `npm run typecheck` | TypeScript check only |
 | `npm run preview` | preview the build |
 | `npm run lint` | ESLint |
 

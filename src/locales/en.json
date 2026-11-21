@@ -136,7 +136,8 @@
     "sending": "Sending...",
     "sentOk": "Message sent. Thanks, I'll get back to you soon.",
     "sentError": "Your message could not be sent. Please try again.",
-    "subtitle": "Got an idea? Let's talk and launch it"
+    "subtitle": "Got an idea? Let's talk and launch it",
+    "tooMany": "You've sent several messages in a row. Please wait a few minutes and try again."
   },
   "cv": {
     "download": "Download",
@@ -181,5 +182,13 @@
     "patitapp-api": "PatitApp backend with Node.js, Express and MongoDB (Mongoose), following the MVC pattern. Sign-up with email confirmation (Nodemailer), JWT login, bcrypt-hashed passwords and image uploads with Multer.",
     "apple-clone": "Recreation of Apple's MacBook Pro product page with a 3D model you can rotate, recolor and resize. React with Three.js (React Three Fiber), GSAP scroll animations and global state with Zustand.",
     "arkascript": "Breakout-style game in plain JavaScript on HTML5 Canvas, no libraries. Keyboard controls, paddle bounce based on the hit point, and continuous collision detection so the ball never tunnels through bricks at high speed."
+  },
+  "projectTags": {
+    "rviewer": "Practice your job interviews with AI",
+    "nexus": "TS + PostgreSQL + Node.js",
+    "patitapp": "Social web app built with React",
+    "patitapp-api": "Node.js + Express + MongoDB",
+    "apple-clone": "MacBook Pro product page clone",
+    "arkascript": "Vanilla JavaScript game"
   }
 }

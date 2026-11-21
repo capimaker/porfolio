@@ -83,7 +83,7 @@ export default function ProjectsApp() {
                     />
                   </span>
                   <span className="text-[13px] font-semibold leading-tight">{project.title}</span>
-                  <span className="text-xs leading-tight text-white/55">{project.tag}</span>
+                  <span className="text-xs leading-tight text-white/55">{t(`projectTags.${project.id}`)}</span>
                 </button>
               ))}
               {visible.length === 0 && (
@@ -121,7 +121,7 @@ function ProjectDetail({ project, onBack }: { project: Project; onBack: () => vo
       <div className="mt-4 flex flex-wrap items-start justify-between gap-3">
         <div>
           <h2 className="text-xl font-bold">{project.title}</h2>
-          <p className="text-sm text-white/60">{project.tag}</p>
+          <p className="text-sm text-white/60">{t(`projectTags.${project.id}`)}</p>
           <p className="mt-2 max-w-[65ch] text-[13px] leading-relaxed text-white/75">
             {t(`projects.${project.id}`)}
           </p>

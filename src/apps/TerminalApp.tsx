@@ -78,7 +78,7 @@ export default function TerminalApp() {
         break
       case 'projects':
         projects.forEach((p) => {
-          out.push(`${p.title.padEnd(14)} ${p.tag}`)
+          out.push(`${p.title.padEnd(14)} ${t(`projectTags.${p.id}`)}`)
           out.push(`  ${p.url ?? p.repo}`)
         })
         break
