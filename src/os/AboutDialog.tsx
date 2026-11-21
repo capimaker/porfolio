@@ -7,13 +7,13 @@ export default function AboutDialog({ open, onClose }: { open: boolean; onClose:
   const { t } = useTranslation()
 
   return (
-    <Modal open={open} onClose={onClose} className="max-w-sm p-6 text-center">
+    <Modal open={open} onClose={onClose} labelledBy="about-dialog-title" className="max-w-sm p-6 text-center">
       <img
         src={profile.avatar}
         alt={profile.name}
         className="mx-auto mb-3 h-16 w-16 rounded-full object-cover ring-2 ring-white/30"
       />
-      <h2 className="text-base font-bold">{t('aboutDialog.title')}</h2>
+      <h2 id="about-dialog-title" className="text-base font-bold">{t('aboutDialog.title')}</h2>
       <p className="mt-2 text-[13px] leading-relaxed text-white/75">{t('aboutDialog.line1')}</p>
       <p className="mt-1 text-[13px] leading-relaxed text-white/60">{t('aboutDialog.line2')}</p>
       <button

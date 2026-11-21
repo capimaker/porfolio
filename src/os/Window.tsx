@@ -1,4 +1,5 @@
 import { useRef, useState, type ReactNode } from 'react'
+import { useTranslation } from 'react-i18next'
 import { animate, motion, useDragControls, useMotionValue, useReducedMotion } from 'framer-motion'
 import { useWindows, type AppId } from './windowContext'
 import { useIsMobile } from './useIsMobile'
@@ -27,6 +28,7 @@ export default function Window({
   dragArea,
   children,
 }: WindowProps) {
+  const { t } = useTranslation()
   const { windows, focusedApp, closeApp, minimizeApp, toggleMaximize, focusApp } = useWindows()
   const win = windows[id]
   const isMobile = useIsMobile()
@@ -128,7 +130,7 @@ export default function Window({
       >
         <div className="flex items-center gap-2">
           <button
-            aria-label="Cerrar"
+            aria-label={t('window.close')}
             onClick={() => closeApp(id)}
             onPointerDown={(e) => e.stopPropagation()}
             className="flex h-3 w-3 items-center justify-center rounded-full bg-[#ff5f57] text-[9px] font-bold leading-none text-black/60"
@@ -136,7 +138,7 @@ export default function Window({
             <span className="opacity-0 transition-opacity group-hover:opacity-100">×</span>
           </button>
           <button
-            aria-label="Minimizar"
+            aria-label={t('window.minimize')}
             onClick={() => minimizeApp(id)}
             onPointerDown={(e) => e.stopPropagation()}
             className="flex h-3 w-3 items-center justify-center rounded-full bg-[#febc2e] text-[9px] font-bold leading-none text-black/60"
@@ -144,7 +146,7 @@ export default function Window({
             <span className="opacity-0 transition-opacity group-hover:opacity-100">−</span>
           </button>
           <button
-            aria-label="Maximizar"
+            aria-label={t('window.maximize')}
             onClick={handleMaximize}
             onPointerDown={(e) => e.stopPropagation()}
             className={`flex h-3 w-3 items-center justify-center rounded-full text-[9px] font-bold leading-none text-black/60 ${

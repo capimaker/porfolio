@@ -190,5 +190,10 @@
     "patitapp-api": "Backend red social de mascotas con Node.js y MongoDB",
     "apple-clone": "Clon de la página del MacBook Pro",
     "arkascript": "Juego en JavaScript puro"
+  },
+  "window": {
+    "close": "Cerrar",
+    "minimize": "Minimizar",
+    "maximize": "Maximizar"
   }
 }

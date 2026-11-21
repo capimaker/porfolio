@@ -190,5 +190,10 @@
     "patitapp-api": "Node.js + Express + MongoDB",
     "apple-clone": "MacBook Pro product page clone",
     "arkascript": "Vanilla JavaScript game"
+  },
+  "window": {
+    "close": "Close",
+    "minimize": "Minimize",
+    "maximize": "Maximize"
   }
 }

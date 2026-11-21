@@ -33,7 +33,12 @@ export default function MenuBar({ onLogout, userName }: MenuBarProps) {
 
   const toggle = (id: MenuId) => setOpenMenu((cur) => (cur === id ? null : id))
   const close = () => setOpenMenu(null)
-  const menuButtonClass = (id: MenuId) => `${PLAIN_BUTTON_CLASS} ${openMenu === id ? 'bg-white/15' : ''}`
+  const menuButtonProps = (id: MenuId) => ({
+    onClick: () => toggle(id),
+    className: `${PLAIN_BUTTON_CLASS} ${openMenu === id ? 'bg-white/15' : ''}`,
+    'aria-haspopup': true,
+    'aria-expanded': openMenu === id,
+  })
 
   const copyEmail = async () => {
     try {
@@ -69,7 +74,7 @@ export default function MenuBar({ onLogout, userName }: MenuBarProps) {
         <div className="flex items-center gap-1">
           {/* System menu (the logo) */}
           <span className="relative">
-            <button onClick={() => toggle('system')} className={menuButtonClass('system')} aria-label="Menu">
+            <button {...menuButtonProps('system')} aria-label="Menu">
               <CapiMark size={15} />
             </button>
             <Dropdown open={openMenu === 'system'} onClose={close}>
@@ -103,7 +108,7 @@ export default function MenuBar({ onLogout, userName }: MenuBarProps) {
           <nav className="hidden items-center md:flex">
             {/* File: direct access to every section */}
             <span className="relative">
-              <button onClick={() => toggle('file')} className={menuButtonClass('file')}>
+              <button {...menuButtonProps('file')}>
                 {t('menu.file')}
               </button>
               <Dropdown open={openMenu === 'file'} onClose={close}>
@@ -124,7 +129,7 @@ export default function MenuBar({ onLogout, userName }: MenuBarProps) {
 
             {/* Edit: copy email to clipboard */}
             <span className="relative">
-              <button onClick={() => toggle('edit')} className={menuButtonClass('edit')}>
+              <button {...menuButtonProps('edit')}>
                 {t('menu.edit')}
               </button>
               <Dropdown open={openMenu === 'edit'} onClose={close}>
@@ -137,7 +142,7 @@ export default function MenuBar({ onLogout, userName }: MenuBarProps) {
 
             {/* View: language */}
             <span className="relative">
-              <button onClick={() => toggle('view')} className={menuButtonClass('view')}>
+              <button {...menuButtonProps('view')}>
                 {t('menu.view')}
               </button>
               <Dropdown open={openMenu === 'view'} onClose={close}>
@@ -152,7 +157,7 @@ export default function MenuBar({ onLogout, userName }: MenuBarProps) {
 
             {/* Go: external profiles */}
             <span className="relative">
-              <button onClick={() => toggle('go')} className={menuButtonClass('go')}>
+              <button {...menuButtonProps('go')}>
                 {t('menu.go')}
               </button>
               <Dropdown open={openMenu === 'go'} onClose={close}>

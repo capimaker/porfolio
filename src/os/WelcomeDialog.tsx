@@ -14,14 +14,14 @@ export default function WelcomeDialog({ open, onClose, onSeeProjects, userName }
   const { t } = useTranslation()
 
   return (
-    <Modal open={open} onClose={onClose} className="max-w-md p-7">
+    <Modal open={open} onClose={onClose} labelledBy="welcome-title" className="max-w-md p-7">
       <div className="flex items-center gap-4">
         <img
           src={profile.avatar}
           alt={profile.name}
           className="h-14 w-14 rounded-full object-cover ring-2 ring-white/30"
         />
-        <h2 className="text-lg font-bold leading-snug">
+        <h2 id="welcome-title" className="text-lg font-bold leading-snug">
           {userName ? t('welcome.titleNamed', { name: userName }) : t('welcome.title')}
         </h2>
       </div>
@@ -36,7 +36,7 @@ export default function WelcomeDialog({ open, onClose, onSeeProjects, userName }
           {t('welcome.secondary')}
         </button>
         <button
-          autoFocus
+          data-autofocus
           onClick={onSeeProjects}
           className="rounded-full bg-blue-500 px-6 py-2 text-[13px] font-semibold text-white transition-transform active:scale-[0.97]"
         >

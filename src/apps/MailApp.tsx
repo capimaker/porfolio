@@ -55,7 +55,7 @@ export default function MailApp() {
         </span>
       </div>
 
-      <label className="flex items-center gap-2 border-b border-white/10 px-4 py-2 text-[13px]">
+      <label className="flex items-center gap-2 border-b border-white/10 px-4 py-2 text-[13px] focus-within:ring-2 focus-within:ring-inset focus-within:ring-blue-400/70">
         <span className="w-14 shrink-0 text-white/50">{t('mail.fromName')}:</span>
         <input
           name="from_name"
@@ -65,7 +65,7 @@ export default function MailApp() {
         />
       </label>
 
-      <label className="flex items-center gap-2 border-b border-white/10 px-4 py-2 text-[13px]">
+      <label className="flex items-center gap-2 border-b border-white/10 px-4 py-2 text-[13px] focus-within:ring-2 focus-within:ring-inset focus-within:ring-blue-400/70">
         <span className="w-14 shrink-0 text-white/50">{t('mail.fromEmail')}:</span>
         <input
           name="reply_to"
@@ -83,7 +83,7 @@ export default function MailApp() {
         name="message"
         required
         placeholder={t('mail.message')}
-        className="os-scroll min-h-0 flex-1 resize-none bg-transparent p-4 text-sm leading-relaxed outline-none placeholder:text-white/35"
+        className="os-scroll min-h-0 flex-1 resize-none bg-transparent p-4 text-sm leading-relaxed outline-none placeholder:text-white/35 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-400/70"
       />
 
       {status === 'ok' && (

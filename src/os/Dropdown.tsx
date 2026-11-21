@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import { useEffect, useRef, type ReactNode } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
 interface DropdownProps {
@@ -7,8 +7,29 @@ interface DropdownProps {
   children: ReactNode
 }
 
-/** Menu-bar dropdown; a transparent full-screen layer closes it on outside click. */
+/**
+ * Menu-bar dropdown; a transparent full-screen layer closes it on outside
+ * click, and Escape closes it and returns focus to the menu button.
+ */
 export default function Dropdown({ open, onClose, children }: DropdownProps) {
+  const onCloseRef = useRef(onClose)
+  useEffect(() => {
+    onCloseRef.current = onClose
+  })
+
+  useEffect(() => {
+    if (!open) return
+    const trigger = document.activeElement as HTMLElement | null
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape') return
+      e.preventDefault()
+      onCloseRef.current()
+      trigger?.focus?.()
+    }
+    document.addEventListener('keydown', onKeyDown)
+    return () => document.removeEventListener('keydown', onKeyDown)
+  }, [open])
+
   return (
     <AnimatePresence>
       {open && (
