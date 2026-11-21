@@ -24,6 +24,13 @@ export default function DesktopIcon({ label, icon, selected, onSelect, onOpen }:
         else onSelect()
       }}
       onDoubleClick={onOpen}
+      onKeyDown={(e) => {
+        // Enter opens, like a double click; preventDefault stops the click that would only select
+        if (e.key === 'Enter') {
+          e.preventDefault()
+          onOpen()
+        }
+      }}
       onFocus={onSelect}
       className="flex w-24 flex-col items-center gap-1 rounded-lg p-1 outline-none"
     >
