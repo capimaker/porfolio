@@ -175,7 +175,11 @@
     "secondary": "Explorar"
   },
   "projects": {
-    "rviewer": "SaaS para practicar entrevistas de trabajo por voz con un entrevistador de IA. Autenticación con Clerk, pagos con Stripe, voz con Vapi y datos en Neon Postgres con Prisma. Hecho en unas 6 semanas.",
-    "nexus": "API REST escrita en TypeScript sobre Node.js y PostgreSQL."
+    "rviewer": "SaaS para practicar entrevistas de trabajo por voz con un entrevistador de IA. Autenticación con Clerk, pagos con Stripe, voz con Vapi y datos en Neon Postgres con Prisma. ",
+    "nexus": "API REST para una red social de gaming, escrita en TypeScript con Express 5 y PostgreSQL (Sequelize). Autenticación con JWT y bcrypt, validación con Zod, seguridad con Helmet y rate limiting, subida de imágenes a Cloudinary, logs con Pino y documentación en Swagger.",
+    "patitapp": "Red social para mascotas donde los usuarios publican, dan like, comentan y se siguen. Frontend en React con Redux Toolkit para el estado, React Router con rutas protegidas y Ant Design, conectado a su propia API.",
+    "patitapp-api": "Backend de PatitApp con Node.js, Express y MongoDB (Mongoose), siguiendo el patrón MVC. Registro con confirmación por email (Nodemailer), login con JWT, contraseñas cifradas con bcrypt y subida de imágenes con Multer.",
+    "apple-clone": "Recreación de la página de producto del MacBook Pro con un modelo 3D que se puede girar, cambiar de color y de tamaño. React con Three.js (React Three Fiber), animaciones de scroll con GSAP y estado global con Zustand.",
+    "arkascript": "Juego tipo Breakout hecho en JavaScript puro sobre HTML5 Canvas, sin librerías. Control con teclado, rebote según el punto de impacto en la pala y detección de colisiones continua para que la bola no atraviese los bloques a alta velocidad."
   }
 }

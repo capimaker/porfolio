@@ -1,7 +1,6 @@
 import arka from "../assets/arka.webp";
 import patitapp from "../assets/patitapp.webp";
 import patiback from "../assets/patiback.gif";
-import enike from "../assets/enike.webp";
 import nexus from "../assets/nexusapp.webp";
 import apple from "../assets/apple.webp";
 import rviewer from "../assets/rviewer.webp";
@@ -31,8 +30,6 @@ export interface Project {
   techs: Tech[];
   url?: string;
   repo: string;
-  /** i18n key under projects.<id> with a short description */
-  hasDescription?: boolean;
 }
 
 export const projects: Project[] = [
@@ -40,7 +37,6 @@ export const projects: Project[] = [
     id: "rviewer",
     title: "RViewer",
     tag: "Practice your Job Interviews with AI",
-    hasDescription: true,
     type: ["frontend", "backend"],
     img: rviewer,
     techs: [
@@ -58,7 +54,6 @@ export const projects: Project[] = [
     id: "nexus",
     title: "Nexus",
     tag: "TS + PostgreSQL + Node.js",
-    hasDescription: true,
     type: ["backend"],
     img: nexus,
     techs: [
@@ -69,19 +64,6 @@ export const projects: Project[] = [
     repo: "https://github.com/capimaker/nexusbk",
   },
   {
-    id: "enike",
-    title: "Enike",
-    tag: "Ecommerce Web App",
-    type: ["frontend", "backend"],
-    img: enike,
-    techs: [
-      { name: "Next.js", icon: "/nextjs.svg" },
-      { name: "Tailwind CSS", icon: "/tailwind.svg" },
-    ],
-    url: "https://enike-eta.vercel.app/",
-    repo: "https://github.com/capimaker/enike",
-  },
-  {
     id: "patitapp",
     title: "PatitApp",
     tag: "Social Web App React",
@@ -89,9 +71,10 @@ export const projects: Project[] = [
     img: patitapp,
     techs: [
       { name: "React", icon: "/react-2.svg" },
+      { name: "Redux", icon: "/redux.svg" },
+      { name: "JavaScript", icon: "/js.png" },
       { name: "CSS", icon: "/css-3.svg" },
     ],
-
     repo: "https://github.com/capimaker/patitApp",
   },
   {
@@ -102,7 +85,7 @@ export const projects: Project[] = [
     img: patiback,
     techs: [
       { name: "Node.js", icon: "/nodejs-2.svg" },
-      { name: "Express", icon: "/express-109.svg" },
+      { name: "JavaScript", icon: "/js.png" },
       { name: "MongoDB", icon: "/mongodb.svg" },
     ],
     repo: "https://github.com/capimaker/PatitasBackend",
@@ -127,7 +110,10 @@ export const projects: Project[] = [
     tag: "JavaScript Vanilla Game",
     type: ["frontend"],
     img: arka,
-    techs: [{ name: "JavaScript", icon: "/js.png" }],
+    techs: [
+      { name: "JavaScript", icon: "/js.png" },
+      { name: "HTML", icon: "/html-1.svg" },
+    ],
     url: "https://capimaker.github.io/Arkascript/",
     repo: "https://github.com/capimaker/Arkascript",
   },
@@ -139,7 +125,6 @@ export const skills: Tech[] = [
   { name: "React", icon: "/react-2.svg" },
   { name: "Next.js", icon: "/nextjs.svg" },
   { name: "Node.js", icon: "/nodejs-2.svg" },
-  { name: "Express", icon: "/express-109.svg" },
   { name: "PostgreSQL", icon: "/postgresql.svg" },
   { name: "MongoDB", icon: "/mongodb.svg" },
   { name: "Prisma", icon: "/prisma.svg" },
