@@ -16,6 +16,9 @@ export default function TerminalApp() {
   const [lines, setLines] = useState<Line[]>([{ type: 'output', text: t('terminal.welcome') }])
   const [input, setInput] = useState('')
   const inputRef = useRef<HTMLInputElement>(null)
+  const history = useRef<string[]>([])
+  // Position while browsing history with the arrow keys; null when typing a new command
+  const historyIndex = useRef<number | null>(null)
   const bottomRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -23,6 +26,10 @@ export default function TerminalApp() {
   }, [lines])
 
   const run = (raw: string) => {
+    const entry = raw.trim()
+    if (entry && history.current[history.current.length - 1] !== entry) history.current.push(entry)
+    historyIndex.current = null
+
     const { output, effect } = runCommand(raw, t)
     if (effect?.type === 'clear') {
       setLines([])
@@ -34,6 +41,21 @@ export default function TerminalApp() {
       { type: 'input', text: raw },
       ...output.map((text): Line => ({ type: 'output', text })),
     ])
+  }
+
+  const onHistoryKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const items = history.current
+    if (e.key === 'ArrowUp' && items.length > 0) {
+      e.preventDefault()
+      const index = historyIndex.current === null ? items.length - 1 : Math.max(0, historyIndex.current - 1)
+      historyIndex.current = index
+      setInput(items[index])
+    } else if (e.key === 'ArrowDown' && historyIndex.current !== null) {
+      e.preventDefault()
+      const index = historyIndex.current + 1
+      historyIndex.current = index < items.length ? index : null
+      setInput(index < items.length ? items[index] : '')
+    }
   }
 
   return (
@@ -66,6 +88,7 @@ export default function TerminalApp() {
             ref={inputRef}
             value={input}
             onChange={(e) => setInput(e.target.value)}
+            onKeyDown={onHistoryKey}
             autoFocus
             autoCapitalize="off"
             autoComplete="off"

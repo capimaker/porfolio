@@ -60,6 +60,7 @@ export default function MailApp() {
         <input
           name="from_name"
           required
+          maxLength={100}
           autoComplete="name"
           className="w-full bg-transparent outline-none placeholder:text-white/35"
         />
@@ -71,6 +72,7 @@ export default function MailApp() {
           name="reply_to"
           type="email"
           required
+          maxLength={200}
           autoComplete="email"
           className="w-full bg-transparent outline-none placeholder:text-white/35"
         />
@@ -82,6 +84,7 @@ export default function MailApp() {
       <textarea
         name="message"
         required
+        maxLength={5000}
         placeholder={t('mail.message')}
         className="os-scroll min-h-0 flex-1 resize-none bg-transparent p-4 text-sm leading-relaxed outline-none placeholder:text-white/35 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-400/70"
       />

@@ -76,7 +76,7 @@ export default function AboutApp() {
             {t('about.location')}
           </p>
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex w-full flex-wrap gap-2 sm:w-auto">
           <a
             href={cv.url}
             download={cv.file}
@@ -107,12 +107,12 @@ export default function AboutApp() {
       </div>
 
       {/* Segmented control */}
-      <div className="flex gap-1 border-b border-white/10 px-5 py-3">
+      <div className="flex gap-1 overflow-x-auto border-b border-white/10 px-5 py-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {tabs.map((item) => (
           <button
             key={item.id}
             onClick={() => setTab(item.id)}
-            className={`rounded-full px-3.5 py-1.5 text-[13px] font-medium transition-colors ${
+            className={`shrink-0 whitespace-nowrap rounded-full px-3.5 py-1.5 text-[13px] font-medium transition-colors ${
               tab === item.id ? 'bg-blue-500 text-white' : 'text-white/70 hover:bg-white/10'
             }`}
           >
@@ -167,15 +167,15 @@ export default function AboutApp() {
         {tab === 'education' && (
           <ul className="space-y-3">
             {education.map((item) => (
-              <li key={item.title} className="flex items-center gap-3">
+              <li key={item.title} className="flex items-start gap-3">
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/10">
                   <GraduationCap size={15} className="text-sky-400" />
                 </span>
                 <div className="min-w-0 flex-1">
-                  <h3 className="truncate text-[13px] font-semibold">{item.title}</h3>
+                  <h3 className="text-[13px] font-semibold">{item.title}</h3>
                   <p className="text-xs text-white/60">{item.institution}</p>
                 </div>
-                <span className="shrink-0 rounded-full bg-white/10 px-2 py-px text-[11px] text-white/60">
+                <span className="mt-1 shrink-0 rounded-full bg-white/10 px-2 py-px text-[11px] text-white/60">
                   {item.years}
                 </span>
               </li>
