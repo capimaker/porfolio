@@ -1,24 +1,30 @@
-import { useState, type ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import { useIsMobile } from './useIsMobile'
 
 interface DesktopIconProps {
   label: string
   icon: ReactNode
+  selected: boolean
+  onSelect: () => void
   onOpen: () => void
 }
 
-export default function DesktopIcon({ label, icon, onOpen }: DesktopIconProps) {
-  const [selected, setSelected] = useState(false)
+/**
+ * Selection lives in the parent, not in focus: Safari on macOS does not focus
+ * buttons on click, so a blur-based deselect never fires there.
+ */
+export default function DesktopIcon({ label, icon, selected, onSelect, onOpen }: DesktopIconProps) {
   const isMobile = useIsMobile()
 
   return (
     <button
-      onClick={() => {
+      onClick={(e) => {
+        e.stopPropagation()
         if (isMobile) onOpen()
-        else setSelected(true)
+        else onSelect()
       }}
       onDoubleClick={onOpen}
-      onBlur={() => setSelected(false)}
+      onFocus={onSelect}
       className="flex w-24 flex-col items-center gap-1 rounded-lg p-1 outline-none"
     >
       <span

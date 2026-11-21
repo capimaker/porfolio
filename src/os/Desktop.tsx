@@ -1,4 +1,4 @@
-import { lazy, Suspense, useRef } from 'react'
+import { lazy, Suspense, useRef, useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { FilePdf, FileText, Folder } from '@phosphor-icons/react'
@@ -29,26 +29,44 @@ export default function Desktop() {
   const { windows, openApp } = useWindows()
   const isMobile = useIsMobile()
   const areaRef = useRef<HTMLDivElement>(null)
+  const [selectedIcon, setSelectedIcon] = useState<string | null>(null)
+
+  const desktopIcons = [
+    {
+      id: 'projects',
+      label: t('desktop.projectsFolder'),
+      icon: <Folder size={46} weight="fill" className="text-sky-400 drop-shadow-lg" />,
+      open: () => openApp('projects'),
+    },
+    {
+      id: 'cv',
+      label: t('desktop.cvFile'),
+      icon: <FilePdf size={46} weight="duotone" className="text-red-400 drop-shadow-lg" />,
+      open: () => openApp('cv'),
+    },
+    {
+      id: 'readme',
+      label: t('desktop.readme'),
+      icon: <FileText size={46} weight="duotone" className="text-white/90 drop-shadow-lg" />,
+      open: () => openApp('about'),
+    },
+  ]
 
   return (
-    <div ref={areaRef} className="relative min-h-0 flex-1">
+    // Clicking anywhere that is not an icon clears the selection, like Finder
+    <div ref={areaRef} className="relative min-h-0 flex-1" onClick={() => setSelectedIcon(null)}>
       {/* Desktop shortcuts, macOS style: top-right column */}
       <div className="absolute right-2 top-2 flex flex-col items-end gap-2">
-        <DesktopIcon
-          label={t('desktop.projectsFolder')}
-          icon={<Folder size={46} weight="fill" className="text-sky-400 drop-shadow-lg" />}
-          onOpen={() => openApp('projects')}
-        />
-        <DesktopIcon
-          label={t('desktop.cvFile')}
-          icon={<FilePdf size={46} weight="duotone" className="text-red-400 drop-shadow-lg" />}
-          onOpen={() => openApp('cv')}
-        />
-        <DesktopIcon
-          label={t('desktop.readme')}
-          icon={<FileText size={46} weight="duotone" className="text-white/90 drop-shadow-lg" />}
-          onOpen={() => openApp('about')}
-        />
+        {desktopIcons.map((item) => (
+          <DesktopIcon
+            key={item.id}
+            label={item.label}
+            icon={item.icon}
+            selected={selectedIcon === item.id}
+            onSelect={() => setSelectedIcon(item.id)}
+            onOpen={item.open}
+          />
+        ))}
       </div>
 
       <AnimatePresence>
