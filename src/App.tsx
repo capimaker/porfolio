@@ -39,7 +39,7 @@ export default function App() {
           className="wallpaper flex h-full flex-col"
         >
           <WindowProvider>
-            <MenuBar onRestart={logout} onLogout={logout} userName={userName} />
+            <MenuBar onLogout={logout} userName={userName} />
             <Desktop />
             <Dock />
           </WindowProvider>
