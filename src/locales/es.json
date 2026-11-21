@@ -51,7 +51,7 @@
     "greeting": "Hola, soy Carlos",
     "role": "Desarrollador Full Stack",
     "location": "Valencia, España",
-    "bio": "Soy Carlos (Capi para los amigos), desarrollador full stack en Valencia. Antes de dedicarme al código pasé más de 11 años como realizador y director de publicidad para clientes como Apple, MSC Cruceros o Snapchat, así que estoy acostumbrado a clientes reales, plazos ajustados y trabajo que tiene que salir. Hoy construyo productos web y móviles con TypeScript, React, Next.js, Node.js y PostgreSQL. Abierto a puestos en España, en remoto o con reubicación.",
+    "bio": "Soy Carlos, desarrollador full stack. Hago aplicaciones web y móviles con JavaScript y TypeScript, y en el backend trabajo con Node.js, PostgreSQL y MongoDB. Mi librería favorita es React, que también uso en móvil con React Native, aunque me gusta aprender cualquier lenguaje que se me ponga delante. Antes de programar dirigía anuncios para marcas como Apple o Snapchat, y de ahí viene mi manía de que las cosas salgan en fecha.",
     "tabBio": "Qué hago",
     "tabExperience": "Experiencia",
     "tabEducation": "Educación",
@@ -166,12 +166,13 @@
     "close": "Cerrar"
   },
   "welcome": {
-    "title": "Bienvenido a capiOS",
-    "titleNamed": "Hola {{name}}, bienvenido a capiOS",
-    "body": "Soy desarrollador full stack (TypeScript, React, Node.js) y antes pasé 11 años dirigiendo publicidad. Empieza por mis proyectos, descarga el CV o prueba la Terminal si te pica la curiosidad.",
+    "title": "Te doy la bienvenida a capiOS",
+    "titleNamed": "Hola {{name}}, te doy la bienvenida a capiOS",
+    "body": "Gracias por entrar a ver mi trabajo. Si has llegado hasta aquí, ya le has dedicado más tiempo del que yo he dedicado nunca a leer unos términos y condiciones.",
     "signature": "Carlos Ramos",
     "cta": "Ver proyectos",
-    "secondary": "Explorar"
+    "secondary": "Explorar",
+    "next": "Empieza por mis proyectos, descarga el CV o prueba la Terminal si te pica la curiosidad."
   },
   "projects": {
     "rviewer": "SaaS para practicar entrevistas de trabajo por voz con un entrevistador de IA. Autenticación con Clerk, pagos con Stripe, voz con Vapi y datos en Neon Postgres con Prisma. ",

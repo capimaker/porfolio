@@ -51,7 +51,7 @@
     "greeting": "Hi, I'm Carlos",
     "role": "Full Stack Developer",
     "location": "Valencia, Spain",
-    "bio": "I'm Carlos (Capi to my friends), a full stack developer based in Valencia. Before switching to code I spent 11+ years as a filmmaker and commercial director for clients like Apple, MSC Cruises and Snapchat, so I'm used to real clients, tight deadlines and work that has to ship. Today I build web and mobile products with TypeScript, React, Next.js, Node.js and PostgreSQL. Open to roles in Spain, remote, or relocation.",
+    "bio": "I'm Carlos, a full stack developer. I make web and mobile apps with JavaScript and TypeScript, and on the backend I work with Node.js, PostgreSQL and MongoDB. My favourite library is React, which I also use on mobile with React Native, though I enjoy picking up any language that crosses my path. Before coding I directed commercials for brands like Apple and Snapchat, which is where my obsession with shipping on time comes from.",
     "tabBio": "What I do",
     "tabExperience": "Experience",
     "tabEducation": "Education",
@@ -168,10 +168,11 @@
   "welcome": {
     "title": "Welcome to capiOS",
     "titleNamed": "Hi {{name}}, welcome to capiOS",
-    "body": "I'm a full stack developer (TypeScript, React, Node.js) who spent 11 years directing commercials before switching to code. Start with my projects, grab the CV, or try the Terminal if you're curious.",
+    "body": "Thanks for coming to see my work. If you've made it this far, you've already spent more time here than I've ever spent reading terms and conditions.",
     "signature": "Carlos Ramos",
     "cta": "See projects",
-    "secondary": "Look around"
+    "secondary": "Look around",
+    "next": "Start with my projects, grab the CV, or try the Terminal if you're curious."
   },
   "projects": {
     "rviewer": "SaaS to practise job interviews by voice with an AI interviewer. Auth with Clerk, payments with Stripe, voice with Vapi, data on Neon Postgres through Prisma.",
