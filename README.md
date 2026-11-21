@@ -26,8 +26,8 @@ api/
   contact.ts         serverless function that validates the contact form and sends it via EmailJS
 ```
 
-- **Window manager:** a context holds every window's state and z-index; focusing a window raises it.
-- **Terminal:** a small command parser (`help`, `whoami`, `skills`, `projects`, `experience`, `education`, `contact`, `open cv`, `neofetch`, `clear`) that reads the same data as the rest of the UI.
+- **Window manager:** a pure reducer (`os/windowsReducer.ts`) holds every window's state and z-index, exposed through a React context; focusing a window raises it.
+- **Terminal:** a small pure command parser (`apps/terminalCommands.ts`) (`help`, `whoami`, `skills`, `projects`, `experience`, `education`, `contact`, `open cv`, `neofetch`, `clear`) that reads the same data as the rest of the UI.
 - **Mobile:** windows open full screen and the Dock adapts.
 - **Language:** Spanish or English from the browser setting, switchable from the menu bar; the CV shown and downloaded follows the language.
 - **Accessibility:** respects `prefers-reduced-motion` and includes a `<noscript>` text version.
@@ -44,6 +44,7 @@ npm run dev
 | `npm run dev` | dev server |
 | `npm run build` | type-check, then production build to `dist/` |
 | `npm run typecheck` | TypeScript check only |
+| `npm test` | unit tests (Vitest): window manager, terminal commands, contact API |
 | `npm run preview` | preview the build |
 | `npm run lint` | ESLint |
 
