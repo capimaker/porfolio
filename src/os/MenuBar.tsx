@@ -317,6 +317,7 @@ export default function MenuBar({ onRestart, onLogout, userName }: MenuBarProps)
                 </h2>
               </div>
               <p className="mt-4 text-sm leading-relaxed text-white/80">{t('welcome.body')}</p>
+              <p className="mt-3 text-sm leading-relaxed text-white/80">{t('welcome.next')}</p>
               <p className="mt-3 text-right text-sm italic text-white/70">{t('welcome.signature')}</p>
               <div className="mt-5 flex justify-end gap-2">
                 <button
