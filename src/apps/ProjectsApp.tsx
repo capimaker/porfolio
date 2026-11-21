@@ -79,6 +79,7 @@ export default function ProjectsApp() {
                       src={project.img}
                       alt={project.title}
                       loading="lazy"
+                      style={{ objectPosition: project.imgPosition }}
                       className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
                     />
                   </span>
@@ -115,7 +116,12 @@ function ProjectDetail({ project, onBack }: { project: Project; onBack: () => vo
       </button>
 
       <div className="overflow-hidden rounded-xl bg-white/10">
-        <img src={project.img} alt={project.title} className="max-h-72 w-full object-cover" />
+        <img
+          src={project.img}
+          alt={project.title}
+          style={{ objectPosition: project.imgPosition }}
+          className="max-h-72 w-full object-cover"
+        />
       </div>
 
       <div className="mt-4 flex flex-wrap items-start justify-between gap-3">

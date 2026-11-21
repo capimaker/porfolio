@@ -36,6 +36,8 @@ export interface Project {
   title: string;
   type: ("frontend" | "backend")[];
   img: string;
+  /** CSS object-position for the screenshot when the important part is not centred */
+  imgPosition?: string;
   techs: Tech[];
   url?: string;
   repo: string;
@@ -113,6 +115,7 @@ export const projects: Project[] = [
     title: "ArkaScript",
     type: ["frontend"],
     img: arka,
+    imgPosition: "top",
     techs: [
       { name: "JavaScript", icon: "/js.png" },
       { name: "HTML", icon: "/html-1.svg" },
